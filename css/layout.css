@@ -72,16 +72,6 @@ a:focus, a:hover, a:active {
   text-transform: uppercase;
 }
 
-.link:after {
-  position: absolute;
-  top: 8px;
-  right: -15px;
-  width: 9px;
-  height: 2px;
-  background: #17bed2;
-  content: " ";
-}
-
 span {
   font-size: 14px;
   font-weight: 400;
