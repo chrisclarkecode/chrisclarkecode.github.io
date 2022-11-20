@@ -29,6 +29,7 @@
 
         <!-- PAGE LEVEL PLUGIN STYLES -->
         <link href="css/animate.css" rel="stylesheet">
+        <link href="css/global.css" rel="stylesheet">
         <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet" type="text/css"/>
 
         <!-- THEME STYLES -->
@@ -84,150 +85,204 @@
 
 
         <!--========== PAGE LAYOUT ==========-->
-        <div id="publications">
-
-            <div class="container content-lg">
+        <div id="research">
+            <div class="container content">
+            </div>
+            <div class="container content">
                 <div class="row margin-b-40">
-                    <div class="col-sm-4">
-                        <h2>Selected Publications</h2>
-                        <!--<p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua enim minim veniam exercitation</p>-->
+                    <div class="col-sm-11">
+                        <p style="font-size: 16px; color: #515769; font-weight: 500;">
+                        Welcome to my research page! Here you can read about
+                        <a href="#research-topics">research topics I am currently interested in and working on</a>,
+                        <a href="#supervision">PhD students which I supervise</a>,
+                        <a href="#grants">research grants</a>, and
+                        <a href="#publications">my peer-reviewed publications</a>.
+                        </p>
                     </div>
-
                 </div>
-                <!--// end row -->
+            </div>
+        </div>
 
+        <div id="research-topics">
 
+            <div class="js__parallax-window" style="background: url(images/full_1.jpg) 50% 18px no-repeat fixed;">
+                <div class="container g-text-center--xs g-padding-y-80--xs g-padding-y-15--sm">
+                    <div class="g-margin-b-80--xs">
+                        <h3 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md g-color--white"><br>Research Topics</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container content">
                 <div class="row margin-b-40">
 
-					<!-- ReactiveVideo -->
-                    <div class="col-lg-3 md-margin-b-100">
-                        <div class="margin-b-20">
-                            <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
-                                <img class="img-responsive" src="img/papers/reactiveVideo.png" alt="ReactiveVideo">
-                            </div>
-                        </div>
-                        <h4><a href="https://eprints.lancs.ac.uk/id/eprint/147601/1/ReactiveVideo_UIST2020_PrePrint.pdf">Reactive Video: Adaptive Video Playback Based on User Motion for Supporting Physical Activity</a> </h4>
-                        <p>C. Clarke, D. Cavdir, P. Chiu, L. Denoue, D. Kimber</p>
-						            <p class="text-uppercase">ACM UIST 2020</p>
-                        <a class="link" href="https://eprints.lancs.ac.uk/id/eprint/147601/1/ReactiveVideo_UIST2020_PrePrint.pdf">Read More</a>
-                    </div>
-
-
-					          <!-- BimodalGaze -->
-                    <div class="col-lg-3 md-margin-b-100">
-                        <div class="margin-b-20">
-                            <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
-                                <img class="img-responsive" src="img/papers/bimodal.png" alt="BimodalGaze">
-                            </div>
-                        </div>
-                        <h4><a href="https://eprints.lancs.ac.uk/id/eprint/142666/1/Head_Gaze_pointing_ETRA20.pdf">BimodalGaze: Seamlessly Refined Pointing with Gaze and Filtered Gestural Head Movement</a> </h4>
-                        <p>L. Sidenmark, D. Mardanbegi, A. Ramirez Gomez, C. Clarke, H. Gellersen</p>
-						            <p class="text-uppercase">ACM ETRA 2020</p>
-                        <a class="link" href="https://eprints.lancs.ac.uk/id/eprint/142666/1/Head_Gaze_pointing_ETRA20.pdf">Read More</a>
-                    </div>
-
-
-
-					          <!-- Outine Pursuits -->
+					<!-- Motion Correlation -->
                     <div class="col-lg-3 md-margin-b-100">
                         <div class="margin-b-20">
                             <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
                                 <img class="img-responsive" src="img/papers/outline_pursuits.png" alt="Outline Pursuits">
                             </div>
                         </div>
-                        <h4><a href="https://eprints.lancs.ac.uk/id/eprint/140452/1/Pursuit_Selection_in_VR_8_.pdf">Outline Pursuits: Gaze-assisted Selection of Occluded Objects in Virtual Reality</a> </h4>
-                        <p>L. Sidenmark*, C. Clarke*, X. Zhang, J. Phu &amp H. Gellersen (* equal contribution)</p>
-						            <p class="text-uppercase">Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems (CHI '20)</p>
-                        <a class="link" href="https://eprints.lancs.ac.uk/id/eprint/140452/1/Pursuit_Selection_in_VR_8_.pdf">Read More</a>
+                        <h4><a href="motioncorrelation.html">Motion Correlation</a></h4>
+                        <p>
+                            Motion correlation is a novel and unique interaction technique where interface elements move in unique trajectories, and a user must mimic the motion of the element in order to make a selection.
+                            <br><br>
+                            My work in this area has focused on how motion correlation can be leveraged for input with any type of motion, including the head, hand, and everyday objects.
+                        </p>
+						<a class="link" href="motioncorrelation.html">Read More</a>
                     </div>
 
-
-					          <!-- MatchPoint -->
+                    <!-- Intelligent Video -->
                     <div class="col-lg-3 md-margin-b-100">
                         <div class="margin-b-20">
                             <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
-                                <img class="img-responsive" src="img/papers/matchpoint.png" alt="MatchPoint">
+                                <img class="img-responsive" src="img/papers/reactiveVideo.png" alt="ReactiveVideo">
                             </div>
                         </div>
-                        <h4><a href="https://eprints.lancs.ac.uk/id/eprint/88665/1/MatchPoint_author_version.pdf">MatchPoint: Spontaneous Spatial Coupling of Body Movement for Touchless Pointing</a> </h4>
-                        <p>C. Clarke &amp H. Gellersen</p>
-						            <p class="text-uppercase">30th Annual ACM Symposium on User Interface Software & Technology (UIST'17)</p>
-                        <a class="link" href="https://eprints.lancs.ac.uk/id/eprint/88665/1/MatchPoint_author_version.pdf">Read More</a>
+                        <h4><a href="video.html">Enhancing Videos</a></h4>
+                        <p>
+                            Videos are a compelling medium for learning, improving, or practicing a wide variety of skills and exericses.
+                            <br><br>
+                            My research in this area aims to improve the utility of videos by enhancing and augmenting their capabilies.
+                        </p>
+                        <a class="link" href="video.html">Read More</a>
+                    </div>
+
+                    <!-- Earables -->
+                    <div class="col-lg-3 md-margin-b-100">
+                       <div class="margin-b-20">
+                           <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
+                               <img class="img-responsive" src="img/papers/earrumble.png" alt="MatchPoint">
+                           </div>
+                       </div>
+                       <h4><a href="earables.html">Earables</a></h4>
+                       <p>
+                           Earables are wearable computing devices that are worn in or around the ear. Earables are particularly interesting because they can leverage an existing ubiquitous, unobtrusive, discreet, inconspicuous, and non-stigmatizing platform that many people use in the form of earphones or hearing aids.
+                           <br><br>
+                           We have explored over 20 years of research on sensing capabilities of earable devices, covering what can be detected and observed, and what interactions and applications are enabled by the platform.
+                           We have also developed and investigated a unique and novel interaction technique involving the contraction of a small in-ear muscle which a subset of the population can voluntarily contract.
+                       </p>
+                       <a class="link" href="earables.html">Read More</a>
+                    </div>
+
+                    <!-- BimodalGaze -->
+                    <div class="col-lg-3 md-margin-b-100">
+                        <div class="margin-b-20">
+                            <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
+                                <img class="img-responsive" src="img/papers/bimodal.png" alt="BimodalGaze">
+                            </div>
+                        </div>
+                        <h4><a href="eyes.html">Coming Soon...</a></h4>
+                        <p>TOP SECRET</p>
+                        <a class="link" href="eyes.html">Read More</a>
                     </div>
 
                 </div>
-                <div class="row margin-b-40">
-                    <!-- Motion correlation -->
-                    <div class="col-lg-3 md-margin-b-100">
-                        <div class="margin-b-20">
-                            <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
-                                <img class="img-responsive" src="img/papers/motion.png" alt="Motion Correlation">
-                            </div>
-                        </div>
-                        <h4><a href="https://eprints.lancs.ac.uk/id/eprint/88253/1/0_Master_Document.pdf">Motion Correlation: Selecting Objects by Matching Their Movement</a> </h4>
-                        <p>E. Velloso, M. Carter, J. Newn, A. Esteves, C. Clarke &amp H. Gellersen</p>
-						            <p class="text-uppercase">ACM Transactions on Computer-Human Interaction (TOCHI)</p>
-                        <a class="link" href="https://eprints.lancs.ac.uk/id/eprint/88253/1/0_Master_Document.pdf">Read More</a>
-                    </div>
-
-                    <!-- TraceMatch -->
-                    <div class="col-lg-3 md-margin-b-100">
-                        <div class="margin-b-20">
-                            <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
-                                <img class="img-responsive" src="img/papers/tracematch.png" alt="TraceMatch">
-                            </div>
-                        </div>
-                        <h4><a href="https://eprints.lancs.ac.uk/id/eprint/83733/1/Tracematch.pdf">TraceMatch: a computer vision technique for user input by tracing of animated controls</a> </h4>
-                        <p>C. Clarke, A. Bellino, A. Esteves, E. Velloso &amp H. Gellersen</p>
-						            <p class="text-uppercase">Proceedings of the 2016 ACM International Joint Conference on Pervasive and Ubiquitous Computing (UbiComp'16)</p>
-                        <a class="link" href="https://eprints.lancs.ac.uk/id/eprint/83733/1/Tracematch.pdf">Read More</a>
-                    </div>
-                </div>
-
             </div>
         </div>
         <!-- End Work -->
 
-        <div id="publications-all">
-            <div class="container content-lg">
-                <div class="row margin-b-40">
-                    <div class="col-sm-4">
-                        <h2>All Peer-Reviewed Publications</h2>
-                        <!--<p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua enim minim veniam exercitation</p>-->
+        <div id="supervision">
+            <div class="js__parallax-window" style="background: url(images/full_1.jpg) 50% 18px no-repeat fixed;">
+                <div class="container g-text-center--xs g-padding-y-80--xs g-padding-y-15--sm">
+                    <div class="g-margin-b-80--xs">
+                        <h3 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md g-color--white"><br>PhD Supervision</h3>
                     </div>
-                    <script src="https://bibbase.org/show?bib=https://christopherclarke.net/publications.bib&commas=true&jsonp=1"></script>
-
                 </div>
-              </div>
-          </div>
-
-        <!-- Contact -->
-        <div id="contact">
-            <div class="bg-color-sky-light">
-                <div class="container content-lg">
-                    <div class="row margin-b-40">
-                        <div class="col-sm-6">
-                           <h2>Contact Me</h2>
-                            <!--<p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua enim minim veniam exercitation</p>-->
-                        </div>
-                    </div>
-                    <!--// end row -->
-
-                    <div class="row">
-                        <div class="col-md-3 col-xs-6 md-margin-b-30">
-                            <h4>Location</h4>
-                            <a href="https://www.google.co.uk/maps/place/University+of+Bath/@51.378169,-2.3267849,15z/data=!4m5!3m4!1s0x487181bb49a7bfd7:0x842e7cc0699da7e7!8m2!3d51.3782228!4d-2.3263987">Bath, United Kingdom</a>
-                        </div>
-                        <div class="col-md-3 col-xs-6">
-                            <h4>Email</h4>
-                            <p>chrisclarke [at] acm [dot] org </p>
-                        </div>
-                    </div>
-                    <!--// end row -->
+            </div>
+            <div class="container content">
+                <div class="row margin-b-40">
+                    <p style="font-size: 16px; color: #515769; font-weight: 500;">I am very lucky to work with amazing PhD students and co-supervisors across a range of topics:</p>
+                    <ul>
+                        <li><a href="https://researchportal.bath.ac.uk/en/persons/violet-henderson">Violet Henderson</a> - <i>"Using Smartphone Tools to Measure the BASMI"</i>. Co-supervised with <a href="https://researchportal.bath.ac.uk/en/persons/dario-cazzola">Dr. Dario Cazzola</a> and <a href="https://www.ruh.nhs.uk/RNHRD/patients/services/rheumatology/AS_service/team.asp?menu_id=2">Prof. Raj Sengupta</a>.</li>
+                        <li><a href="https://researchportal.bath.ac.uk/en/persons/izzy-fitton">Izzy Fitton</a> - <i>"Skills Training in VR"</i>. Co-supervised with <a href="http://lutteroth.me/">Dr. Christof Lutteroth</a>, <a href="https://researchportal.bath.ac.uk/en/persons/michael-proulx">Dr. Michael Proulx</a>, and <a href="https://jeremydaltonxr.com/">Jeremy Dalton</a>.</li>
+                        <li><a href="https://researchportal.bath.ac.uk/en/persons/rosie-barnett">Rosie Barnett</a> - <i>"Exploration of digital interventions to support the self-management of axial spondyloarthritis"</i>. Co-supervised with <a href="https://researchportal.bath.ac.uk/en/persons/peter-rouse">Dr. Peter Rouse</a> and <a href="https://www.ruh.nhs.uk/RNHRD/patients/services/rheumatology/AS_service/team.asp?menu_id=2">Prof. Raj Sengupta</a>.</li>
+                        <li><a href="https://researchportal.bath.ac.uk/en/persons/james-nash">James Nash</a> - <i>"Creating and Evaluating Novel Fluid-Powered, Force-Responsive Displays"</i>. Co-supervised with <a href="http://www.jasonalexander.kiwi/">Prof. Jason Alexander</a>.</li>
+                        <li><a href="https://researchportal.bath.ac.uk/en/persons/julia-groot">Julia Groot</a> - <i>"An Evaluation of the Effectiveness of Digital Health Technology to Support Mental Health and Well-being"</i>. Co-supervised with <a href="https://researchportal.bath.ac.uk/en/persons/mark-brosnan">Prof. Mark Brosnan</a> and <a href="https://www.southampton.ac.uk/people/5xbf59/doctor-ben-ainsworth">Dr. Ben Ainsworth</a>.</li>
+                        <li><a href="https://researchportal.bath.ac.uk/en/persons/teodora-dinca">Teodora Dinca</a> - <i>"The Design and Development of Kinetic Force Feedback Displays Using Smart Liquids and Materials"</i>. Co-supervised with <a href="http://www.jasonalexander.kiwi/">Prof. Jason Alexander</a>.</li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <!-- End Contact -->
+
+
+        <div id="grants">
+            <div class="js__parallax-window" style="background: url(images/full_1.jpg) 50% 18px no-repeat fixed;">
+                <div class="container g-text-center--xs g-padding-y-80--xs g-padding-y-15--sm">
+                    <div class="g-margin-b-80--xs">
+                        <h3 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md g-color--white"><br>Research Grants</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="container content">
+                <div class="row margin-b-40">
+                    <p style="font-size: 16px; color: #515769; font-weight: 500;">I have received research funding from a number of sources including:</p>
+                    <ul>
+                        <li>
+                            <b>Title:</b> <em><a href="https://www.fundingawards.nihr.ac.uk/award/NIHR203872">Hands free-control of upper arm prostheses using The Earswitch, and translation to functional, active, assistive support (The Earswitch FAAS-brace) for upper-limb weakness post-stroke, cervical spinal cord injury and neuropathies.</a></em>
+                            <br>
+                            <p style="font-size: 16px; color: #515769; font-weight: 500;">
+                            <b>Funder:</b> National Institute for Health Research (NIHR)
+                            <br>
+                            <b>Total Awarded:</b> £69,870
+                            </p>
+                        </li>
+                        <li>
+                            <b>Title:</b> <em><a href="https://fundingawards.nihr.ac.uk/award/NIHR203387">The Earswitch: NIHR i4i PDA: taking proof-of-concept via co-design and objective technical/ user validation to a user ready assistive technology switch, incorporating wider health and care innovative sensor applications.</a></em>
+                            <br>
+                            <p style="font-size: 16px; color: #515769; font-weight: 500;">
+                            <b>Funder:</b> National Institute for Health Research (NIHR)
+                            <br>
+                            <b>Total Awarded:</b> £1,449,793
+                            </p>
+                        </li>
+                        <li>
+                            <b>Title:</b> <em><a href="https://emil-xr.eu/">European Media and Immersion Lab (EMIL).</a></em>
+                            <br>
+                            <p style="font-size: 16px; color: #515769; font-weight: 500;">
+                            <b>Funder:</b> Horizon Europe and UK Research and Innovation (UKRI)
+                            <br>
+                            <b>Total Awarded:</b> Approx. €8,000,000
+                            </p>
+                        </li>
+                        <li>
+                            <b>Title:</b> <em><a href="https://www.birdbath.org.uk/wp-content/uploads/2022/01/BIRD-Summer-Studentships-2022.pdf">BIRD Summer Studentship 2022.</a></em>
+                            <br>
+                            <p style="font-size: 16px; color: #515769; font-weight: 500;">
+                            <b>Funder:</b> Bath Institute for Rheumatic Diseases (BIRD)
+                            <br>
+                            <b>Total Awarded:</b> £2,840
+                            </p>
+                        </li>
+                    </ul>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div id="publications">
+            <div class="js__parallax-window" style="background: url(images/full_1.jpg) 50% 18px no-repeat fixed;">
+                <div class="container g-text-center--xs g-padding-y-80--xs g-padding-y-15--sm">
+                    <div class="g-margin-b-80--xs">
+                        <h3 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md g-color--white"><br>Publications</h3>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container content-lg">
+                <div class="row margin-b-40">
+                    <script src="https://bibbase.org/show?bib=https://christopherclarke.net/publications.bib&commas=true&jsonp=1"></script>
+                </div>
+            </div>
+        </div>
+
+
         <!--========== END PAGE LAYOUT ==========-->
 
         <!--========== FOOTER ==========-->
@@ -237,13 +292,13 @@
                     <div class="col-xs-6">
                         <img class="footer-logo" src="img/logo.png" alt="Acecv Logo">
                     </div>
-					<div class="col-xs-6">
+					<div class="col-xs-6 text-right sm-text-left">
                         <p>Copyright &copy 2021 Christopher Clarke. All Rights Reserved.</p>
                     </div>
                     <div class="col-xs-6">
                         <p>Website last updated in February 2021.</p>
                     </div>
-					<div class="col-xs-6 text-right sm-text-left">
+					<div class="col-xs-6">
                         <p class="margin-b-0"><a class="fweight-700" href="http://keenthemes.com/preview/acecv/">Acecv</a> Theme Powered by: <a class="fweight-700" href="http://www.keenthemes.com/">KeenThemes.com</a></p>
                     </div>
                 </div>
