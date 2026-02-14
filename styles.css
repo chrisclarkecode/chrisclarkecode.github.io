@@ -139,8 +139,8 @@
             margin-left: auto;
             margin-right: auto;
             display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: var(--spacing-xl);
+            grid-template-columns: 1fr 220px;
+            gap: var(--spacing-lg);
             align-items: center;
             margin-bottom: var(--spacing-lg);
         }
@@ -582,7 +582,7 @@
             }
 
             .hero-image {
-                max-width: 280px;
+                max-width: 200px;
                 margin: 0 auto;
             }
             
