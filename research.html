@@ -1,387 +1,921 @@
-<!-- Index file... -->
-
 <!DOCTYPE html>
-<!-- ==============================
-    Project:        Metronic "Acecv" Frontend Freebie - Responsive HTML Template Based On Twitter Bootstrap 3.3.4
-    Version:        1.00
-    Author:         KeenThemes
-    Primary use:    Corporate, Business Themes.
-    Email:          support@keenthemes.com
-    Follow:         http://www.twitter.com/keenthemes
-    Like:           http://www.facebook.com/keenthemes
-    Website:        http://www.keenthemes.com
-    Premium:        Premium Metronic Admin Theme: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-================================== -->
-<html lang="en" class="no-js">
-    <!-- BEGIN HEAD -->
-    <head>
-        <meta charset="utf-8"/>
-        <title>Chris Clarke</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta content="width=device-width, initial-scale=1" name="viewport"/>
-        <meta content="" name="description"/>
-        <meta content="" name="author"/>
-
-        <!-- GLOBAL MANDATORY STYLES -->
-        <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
-        <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css"/>
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-
-        <!-- PAGE LEVEL PLUGIN STYLES -->
-        <link href="css/animate.css" rel="stylesheet">
-        <link href="css/global.css" rel="stylesheet">
-        <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet" type="text/css"/>
-
-        <!-- THEME STYLES -->
-        <link href="css/layout.min.css" rel="stylesheet" type="text/css"/>
-
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="favicon.ico"/>
-    </head>
-    <!-- END HEAD -->
-
-    <!-- BODY -->
-    <body id="body" data-spy="scroll" data-target=".header">
-
-        <!--========== HEADER ==========-->
-        <header class="header navbar-fixed-top">
-            <!-- Navbar -->
-            <nav class="navbar" role="navigation">
-                <div class="container">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="menu-container js_nav-item">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="toggle-icon"></span>
-                        </button>
-
-                        <!-- Logo -->
-                        <div class="logo">
-                            <a class="logo-wrap" href="index.html">
-                                <img class="logo-img" src="img/logo.png" alt="ChrisClarke">
-                            </a>
-                        </div>
-                        <!-- End Logo -->
-                    </div>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse nav-collapse">
-                        <div class="menu-container">
-                            <ul class="nav navbar-nav navbar-nav-right">
-                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="index.html">Home</a></li>
-                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="research.html">Research</a></li>
-                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="teaching-and-admin.html">Teaching & Admin</a></li>
-                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-            <!-- Navbar -->
-
-        </header>
-        <!--========== END HEADER ==========-->
-
-
-        <!--========== PAGE LAYOUT ==========-->
-        <div id="research">
-            <div class="container content">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Dr. Christopher Clarke</title>
+    <meta name="description" content="Research, publications, grants, and PhD supervision by Dr. Christopher Clarke.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/png">
+    <style>
+        /* Additional styles for research page */
+        .section-intro {
+            background: rgba(50, 130, 184, 0.05);
+            padding: var(--spacing-md);
+            border-left: 4px solid var(--color-accent);
+            border-radius: 0 8px 8px 0;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .grant-item, .award-item {
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            border-left: 3px solid var(--color-light);
+            background: rgba(187, 225, 250, 0.03);
+            border-radius: 0 6px 6px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .grant-item:hover, .award-item:hover {
+            border-left-color: var(--color-accent);
+            background: rgba(187, 225, 250, 0.08);
+            transform: translateX(3px);
+        }
+        
+        .grant-title, .award-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .grant-funder {
+            color: var(--color-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .grant-amount {
+            color: var(--color-accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .activity-group {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .activity-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .activity-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .activity-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Research Page Submenu */
+        .research-submenu {
+            position: sticky;
+            top: 65px;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 999;
+            padding: var(--spacing-sm) 0;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .submenu-container {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .submenu-links {
+            display: flex;
+            gap: var(--spacing-md);
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .submenu-links a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .submenu-links a:hover {
+            color: var(--color-accent);
+            background: rgba(50, 130, 184, 0.05);
+            border-color: var(--color-accent);
+        }
+        
+        .submenu-links a.active {
+            background: var(--color-accent);
+            color: white;
+            border-color: var(--color-accent);
+        }
+        
+        @media (max-width: 768px) {
+            .research-submenu {
+                top: 60px;
+            }
+            
+            .submenu-links {
+                gap: 0.5rem;
+            }
+            
+            .submenu-links a {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Christopher Clarke</a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            <div class="container content">
-                <div class="row margin-b-40">
-                    <div class="col-sm-11">
-                        <p style="font-size: 18px; color: #515769; font-weight: 500;">
-                        Welcome to my research page! I am a member of the <a href="https://www.bath.ac.uk/research-groups/human-computer-interaction/">HCI@Bath research group</a>, <a href="https://www.bath.ac.uk/research-institutes/bath-institute-for-the-augmented-human/">Institute for the Augmented Human</a>, <a href="">Centre for Spatial Intelligence</a>, and <a href="https://researchportal.bath.ac.uk/en/organisations/centre-for-bioengineering-biomedical-technologies-cbio">Centre for Bioengineering & Biomedical Technologies (CBio)</a>.
-                        Here you can read about
-                        <a href="#publications">my peer-reviewed publications</a>,
-                        <a href="#grants">research grants</a>,
-                        <a href="#awards">awards</a>,
-                        <a href="#supervision">PhD students I (co-)supervise</a>, and
-                        <a href="#professional-activities">my professional activities</a>.
-                        </p>
-                    </div>
-                </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html" class="active">Research</a></li>
+                <li><a href="supervision.html">Supervision</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Research Content -->
+    <div style="margin-top: 80px;"></div>
+
+    <!-- Research Submenu -->
+    <div class="research-submenu" id="researchSubmenu">
+        <div class="submenu-container">
+            <ul class="submenu-links">
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#grants">Grants</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#professional-activities">Professional Activities</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Year filter submenu (shown when in publications section) -->
+    <div class="research-submenu" id="yearSubmenu" style="display: none; top: 120px;">
+        <div class="submenu-container">
+            <ul class="submenu-links" id="yearLinks" style="gap: 0.5rem;">
+                <li><a href="#year-all" class="year-filter active" data-year="all" style="font-size: 0.82rem; padding: 0.35rem 0.8rem;">All</a></li>
+                <li><a href="#year-2025" class="year-filter" data-year="2025" style="font-size: 0.82rem; padding: 0.35rem 0.8rem;">2025</a></li>
+                <li><a href="#year-2024" class="year-filter" data-year="2024" style="font-size: 0.82rem; padding: 0.35rem 0.8rem;">2024</a></li>
+                <li><a href="#year-2023" class="year-filter" data-year="2023" style="font-size: 0.82rem; padding: 0.35rem 0.8rem;">2023</a></li>
+                <li><a href="#year-2022" class="year-filter" data-year="2022" style="font-size: 0.82rem; padding: 0.35rem 0.8rem;">2022</a></li>
+                <li><a href="#year-2021" class="year-filter" data-year="2021" style="font-size: 0.82rem; padding: 0.35rem 0.8rem;">2021</a></li>
+                <li><a href="#year-2020" class="year-filter" data-year="2020" style="font-size: 0.82rem; padding: 0.35rem 0.8rem;">2020</a></li>
+                <li><a href="#year-2019" class="year-filter" data-year="2019" style="font-size: 0.82rem; padding: 0.35rem 0.8rem;">2019</a></li>
+                <li><a href="#year-2017" class="year-filter" data-year="2017" style="font-size: 0.82rem; padding: 0.35rem 0.8rem;">2017</a></li>
+                <li><a href="#year-2016" class="year-filter" data-year="2016" style="font-size: 0.82rem; padding: 0.35rem 0.8rem;">2016</a></li>
+                <li><a href="#year-2015" class="year-filter" data-year="2015" style="font-size: 0.82rem; padding: 0.35rem 0.8rem;">2015</a></li>
+                <li><a href="#year-2014" class="year-filter" data-year="2014" style="font-size: 0.82rem; padding: 0.35rem 0.8rem;">2014</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <section id="research-intro">
+        <h2>Research</h2>
+        <div class="section-intro">
+            <p>I am a member of the <a href="https://www.bath.ac.uk/research-groups/human-computer-interaction/">HCI@Bath research group</a>, <a href="https://www.bath.ac.uk/research-institutes/bath-institute-for-the-augmented-human/">Institute for the Augmented Human</a>, Centre for Spatial Intelligence, and <a href="https://researchportal.bath.ac.uk/en/organisations/centre-for-bioengineering-biomedical-technologies-cbio">Centre for Bioengineering & Biomedical Technologies (CBio)</a>.</p>
+            <p>Here you can read about <a href="#publications">my publications</a>, <a href="#grants">research grants</a>, <a href="#awards">awards</a>, and <a href="#professional-activities">my professional activities</a>. For information about supervision, please visit the <a href="supervision.html">Supervision page</a>.</p>
+        </div>
+
+        <h3>Research Areas</h3>
+        <div class="research-areas" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--spacing-md); margin-top: var(--spacing-md);">
+            <div class="research-card" style="padding: var(--spacing-md); background: white; border: 1px solid var(--color-border); border-radius: 8px;">
+                <h4 style="color: var(--color-secondary); font-weight: 600; margin-bottom: var(--spacing-xs); font-size: 1.05rem;">Variability-Aware Interaction Design</h4>
+                <p style="font-size: 0.95rem; color: var(--color-text-light); margin: 0;">We are all unique and do things our own way — how can we design systems that embrace this variability rather than expecting users to adapt?</p>
+            </div>
+            <div class="research-card" style="padding: var(--spacing-md); background: white; border: 1px solid var(--color-border); border-radius: 8px;">
+                <h4 style="color: var(--color-secondary); font-weight: 600; margin-bottom: var(--spacing-xs); font-size: 1.05rem;">Supporting Physical Activities</h4>
+                <p style="font-size: 0.95rem; color: var(--color-text-light); margin: 0;">How can sensing and interaction support people to engage in physical activities such as learning or practising a new skill?</p>
+            </div>
+            <div class="research-card" style="padding: var(--spacing-md); background: white; border: 1px solid var(--color-border); border-radius: 8px;">
+                <h4 style="color: var(--color-secondary); font-weight: 600; margin-bottom: var(--spacing-xs); font-size: 1.05rem;">Healthcare Applications</h4>
+                <p style="font-size: 0.95rem; color: var(--color-text-light); margin: 0;">Chronic condition monitoring, stress detection, and other digital health interventions.</p>
             </div>
         </div>
 
-        <div id="publications">
-            <div class="js__parallax-window" style="background: url(images/full_1.jpg) 50% 18px no-repeat fixed;">
-                <div class="container g-text-center--xs g-padding-y-80--xs g-padding-y-15--sm">
-                    <div class="g-margin-b-80--xs">
-                        <h3 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md g-color--white"><br>Publications</h3>
-                    </div>
-                </div>
+        <h3>Technology Platforms</h3>
+        <div class="research-areas" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--spacing-md); margin-top: var(--spacing-md);">
+            <div class="research-card" style="padding: var(--spacing-md); background: white; border: 1px solid var(--color-border); border-radius: 8px;">
+                <h4 style="color: var(--color-secondary); font-weight: 600; margin-bottom: var(--spacing-xs); font-size: 1.05rem;">Wearables</h4>
             </div>
-            <div class="container content">
-                <div class="row margin-b-40">
-                    <p style="font-size: 16px; color: #515769; font-weight: 500;">Below is a list of my publications, the full and most up to date list can be found on <a href="https://scholar.google.co.uk/citations?user=5jPnww0AAAAJ&hl=en&oi=sra">Google Scholar</a>:</p>
-                    <script src="https://bibbase.org/show?bib=https://christopherclarke.net/publications.bib&commas=true&jsonp=1"></script>
-                </div>
+            <div class="research-card" style="padding: var(--spacing-md); background: white; border: 1px solid var(--color-border); border-radius: 8px;">
+                <h4 style="color: var(--color-secondary); font-weight: 600; margin-bottom: var(--spacing-xs); font-size: 1.05rem;">Extended Reality</h4>
+            </div>
+            <div class="research-card" style="padding: var(--spacing-md); background: white; border: 1px solid var(--color-border); border-radius: 8px;">
+                <h4 style="color: var(--color-secondary); font-weight: 600; margin-bottom: var(--spacing-xs); font-size: 1.05rem;">Computer Vision</h4>
             </div>
         </div>
+    </section>
 
-        <div id="grants">
-            <div class="js__parallax-window" style="background: url(images/full_1.jpg) 50% 18px no-repeat fixed;">
-                <div class="container g-text-center--xs g-padding-y-80--xs g-padding-y-15--sm">
-                    <div class="g-margin-b-80--xs">
-                        <h3 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md g-color--white"><br>Research Grants</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="container content">
-                <div class="row margin-b-40">
-                    <p style="font-size: 16px; color: #515769; font-weight: 500;">Whilst in academia, I have received research funding from a number of sources including (as PI*):</p>
-                    <ul>
-						<li>
-                            <b>Title:</b> <em>Novel Wearable-based Stress Measurement Using Smartwatch and Earables*</em>
-                            <br>
-                            <p style="font-size: 16px; color: #515769; font-weight: 500;">
-                            <b>Funder:</b> UKRI Engineering and Physical Sciences Research Council (EPSRC)
-                            <br>
-                            <b>Total Awarded:</b> Approx. £72,798
-                            </p>
-                        </li>
-                        <li>
-                            <b>Title:</b> <em>Age inclusive technology for active ageing in retirement living</em>
-                            <br>
-                            <p style="font-size: 16px; color: #515769; font-weight: 500;">
-                            <b>Funder:</b> UKRI Economic and Social Research Council (ESRC)
-                            <br>
-                            <b>Total Awarded:</b> Approx. £18,877
-                            </p>
-                        </li>
-						<li>
-                            <b>Title:</b> <em>iSTEP: Intelligent inclusive Social Television-based Exercise snacking Project</em>
-                            <br>
-                            <p style="font-size: 16px; color: #515769; font-weight: 500;">
-                            <b>Funder:</b> UKRI Economic and Social Research Council (ESRC)
-                            <br>
-                            <b>Total Awarded:</b> Approx. £105,844
-                            </p>
-                        </li>
-                        <li>
-                            <b>Title:</b> <em><a href="https://emil-xr.eu/">European Media and Immersion Lab (EMIL)</a></em>
-                            <br>
-                            <p style="font-size: 16px; color: #515769; font-weight: 500;">
-                            <b>Funder:</b> Horizon Europe and UK Research and Innovation (UKRI)
-                            <br>
-                            <b>Total Awarded:</b> Approx. €8,000,000
-                            </p>
-                        </li>
-                        <li>
-                            <b>Title:</b> <em><a href="https://www.fundingawards.nihr.ac.uk/award/NIHR203872">Hands free-control of upper arm prostheses using The Earswitch, and translation to functional, active, assistive support (The Earswitch FAAS-brace) for upper-limb weakness post-stroke, cervical spinal cord injury and neuropathies</a></em>
-                            <br>
-                            <p style="font-size: 16px; color: #515769; font-weight: 500;">
-                            <b>Funder:</b> National Institute for Health Research (NIHR)
-                            <br>
-                            <b>Total Awarded:</b> £69,870
-                            </p>
-                        </li>
-                        <li>
-                            <b>Title:</b> <em><a href="https://fundingawards.nihr.ac.uk/award/NIHR203387">The Earswitch: NIHR i4i PDA: taking proof-of-concept via co-design and objective technical/ user validation to a user ready assistive technology switch, incorporating wider health and care innovative sensor applications</a></em>
-                            <br>
-                            <p style="font-size: 16px; color: #515769; font-weight: 500;">
-                            <b>Funder:</b> National Institute for Health Research (NIHR)
-                            <br>
-                            <b>Total Awarded:</b> £1,449,793
-                            </p>
-                        </li>
-                        <li>
-                            <b>Title:</b> <em><a href="https://www.birdbath.org.uk/wp-content/uploads/2022/01/BIRD-Summer-Studentships-2022.pdf">BIRD Summer Studentship 2022*</a></em>
-                            <br>
-                            <p style="font-size: 16px; color: #515769; font-weight: 500;">
-                            <b>Funder:</b> Bath Institute for Rheumatic Diseases (BIRD)
-                            <br>
-                            <b>Total Awarded:</b> £2,840
-                            </p>
-                        </li>
-                    </ul>
-                    <p style="font-size: 16px; color: #515769; font-weight: 500;">Also, during my time at Veraz Ltd I co-authored several successful funding proposals:</p>
-                    <ul>
-                        <li>
-                            <b>Title:</b> <em><a href="https://sbrihealthcare.co.uk/company/veraz/">The Green Badge System (Phase 3 Competition)</a></em>
-                            <br>
-                            <p style="font-size: 16px; color: #515769; font-weight: 500;">
-                            <b>Funder:</b> Small Business Research Initiative (SBRI) Healthcare
-                            <br>
-                            <b>Total Awarded:</b> £928,462
-                            </p>
-                        </li>
-                        <li>
-                            <b>Title:</b> <em><a href="https://sbrihealthcare.co.uk/company/veraz-ltd/">Care Tracker - automatic care quality assurance - hospital to home</a></em>
-                            <br>
-                            <p style="font-size: 16px; color: #515769; font-weight: 500;">
-                            <b>Funder:</b> Small Business Research Initiative (SBRI) Healthcare
-                            <br>
-                            <b>Total Awarded:</b> £98,853
-                            </p>
-                        </li>
-                        <li>
-                            <b>Title:</b> <em><a href="https://old.food.gov.uk/sites/default/files/annual-%20science-report-2013-14.pdf">FSA Strategic challenge 2012: Green badge system for food safety</a></em>
-                            <br>
-                            <p style="font-size: 16px; color: #515769; font-weight: 500;">
-                            <b>Funder:</b> Food Standards Agency (FSA)
-                            <br>
-                            <b>Total Awarded:</b> £54,728
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <!-- Publications Section -->
+    <section id="publications">
+        <h2>Publications</h2>
+        <div class="section-intro">
+            <p>Below is a list of my publications, the full and most up to date list can be found on <a href="https://scholar.google.co.uk/citations?user=5jPnww0AAAAJ&hl=en&oi=sra" target="_blank">Google Scholar</a>.</p>
         </div>
 
-        <div id="awards">
-            <div class="js__parallax-window" style="background: url(images/full_1.jpg) 50% 18px no-repeat fixed;">
-                <div class="container g-text-center--xs g-padding-y-80--xs g-padding-y-15--sm">
-                    <div class="g-margin-b-80--xs">
-                        <h3 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md g-color--white"><br>Awards</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="container content">
-                <div class="row margin-b-40">
-                    <p style="font-size: 16px; color: #515769; font-weight: 500;">Some personal and collaborative (the perks of working with amazing people) awards I have received:</p>
-                    <ul>
-						<li>2025 - CHI'25 Best Paper Honourable Mention for <a href="https://dl.acm.org/doi/full/10.1145/3706598.3713957">RetroSketch: A Retrospective Method for Measuring Emotions and Presence in Virtual Reality</a></li>
-                        <li>2024 - CHI'24 Best Paper Honourable Mention for <a href="https://dl.acm.org/doi/full/10.1145/3613904.3642611">Sweating the Details: Emotion Recognition and the Influence of Physical Exertion in Virtual Reality Exergaming</a></li>
-                        <li>2020 - EPSRC Doctoral Prize</li>
-                        <li>2020 - ETRA'20 Best Paper Honourable Mention for <a href="https://dl.acm.org/doi/abs/10.1145/3379155.3391312">BimodalGaze: Seamlessly Refined Pointing with Gaze and Filtered Gestural Head Movement</a></li>
-                        <li>2017 - TOCHI Best Paper Award for <a href="https://dl.acm.org/doi/abs/10.1145/3064937">Motion Correlation: Selecting Objects by Matching Their Movement</a></li>
-                        <li>2014 - Best MSc Computer Science Dissertation, School of Computing and Communications, Lancaster University</li>
-                        <li>2014 - Best Overall Student, School of Computing and Communications, Lancaster University</li>
-                    </ul>
-                </div>
-            </div>
+        <h3 class="year-heading">2025</h3>
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Openearable%202.0%3A%20Open-source%20earphone%20platform%20for%20physiological%20ear%20sensing%22%20Clarke" target="_blank" rel="noopener noreferrer">Openearable 2.0: Open-source earphone platform for physiological ear sensing</a></div>
+            <div class="publication-authors">R"oddiger, Tobias and K"uttner, Michael and Lepold, Philipp and King, Tobias and Moschina, Dennis and Bagge, Oliver and Paradiso, Joseph A and <strong>Clarke, Christopher</strong> and Beigl, Michael</div>
+            <div class="publication-venue">Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies, 2025</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22RetroSketch%3A%20A%20Retrospective%20Method%20for%20Measuring%20Emotions%20and%20Presence%20in%20Virtual%20Reality%22%20Clarke" target="_blank" rel="noopener noreferrer">RetroSketch: A Retrospective Method for Measuring Emotions and Presence in Virtual Reality</a></div>
+            <div class="publication-authors">Potts, Dominic and Gada, Miloni and Gupta, Aastha and Goel, Kavya and Krzok, Klaus Philipp and Pate, Genevieve and Hartley, Joseph and Weston-Arnold, Mark and Aylott, Jakob and <strong>Clarke, Christopher</strong> and others</div>
+            <div class="publication-venue">Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems, 2025</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Demonstrating%20OpenEarable%202.0%3A%20An%20AI-Powered%20Ear%20Sensing%20Platform%22%20Clarke" target="_blank" rel="noopener noreferrer">Demonstrating OpenEarable 2.0: An AI-Powered Ear Sensing Platform</a></div>
+            <div class="publication-authors">R"oddiger, Tobias and Zitz, Valeria and Hummel, Jonas and K"uttner, Michael and Lepold, Philipp and King, Tobias and Paradiso, Joseph A and <strong>Clarke, Christopher</strong> and Beigl, Michael</div>
+            <div class="publication-venue">Proceedings of the Extended Abstracts of the CHI Conference on Human Factors in Computing Systems, 2025</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Investigating%20the%20Impact%20of%20Deformable%2C%20Movable%2C%20and%20Rigid%20Surfaces%20on%20Force-Input%20Interactions%22%20Clarke" target="_blank" rel="noopener noreferrer">Investigating the Impact of Deformable, Movable, and Rigid Surfaces on Force-Input Interactions</a></div>
+            <div class="publication-authors">Nash, James and Sauv'e, Kim and Sharma, Adwait and <strong>Clarke, Christopher</strong> and Alexander, Jason</div>
+            <div class="publication-venue">ACM Transactions on Computer-Human Interaction, 2025</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22BodyPursuits%3A%20Exploring%20Smooth%20Pursuit%20Gaze%20Interaction%20Based%20on%20Body%20Motion%20Targets%22%20Clarke" target="_blank" rel="noopener noreferrer">BodyPursuits: Exploring Smooth Pursuit Gaze Interaction Based on Body Motion Targets</a></div>
+            <div class="publication-authors">Hansen, Anja and Makarem, Sarah and Kunze, Kai and Zhou, Yexu and Knierim, Michael Thomas and <strong>Clarke, Christopher</strong> and Gellersen, Hans and Beigl, Michael and R"oddiger, Tobias</div>
+            <div class="publication-venue">Proceedings of the 2025 Symposium on Eye Tracking Research and Applications, 2025</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22earEOG%20via%20periauricular%20electrodes%20to%20facilitate%20eye%20tracking%20in%20a%20natural%20headphone%20form%20factor%22%20Clarke" target="_blank" rel="noopener noreferrer">earEOG via periauricular electrodes to facilitate eye tracking in a natural headphone form factor</a></div>
+            <div class="publication-authors">King, Tobias and Knierim, Michael and Lepold, Philipp and <strong>Clarke, Christopher</strong> and Gellersen, Hans and Beigl, Michael and R"oddiger, Tobias</div>
+            <div class="publication-venue">Scientific Reports, 2025</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22EarXplore%3A%20An%20Open%20Research%20Database%20on%20Earable%20Interaction%22%20Clarke" target="_blank" rel="noopener noreferrer">EarXplore: An Open Research Database on Earable Interaction</a></div>
+            <div class="publication-authors">Hummel, Jonas and R"oddiger, Tobias and Zitz, Valeria and Lepold, Philipp and K"uttner, Michael and Prill, Marius and <strong>Clarke, Christopher</strong> and Gellersen, Hans and Beigl, Michael</div>
+            <div class="publication-venue">arXiv preprint arXiv:2507.20656, 2025</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22HydroHaptics%3A%20High-Fidelity%20Force-Feedback%20on%20Soft%20Deformable%20Interfaces%20using%20Hydrostatic%20Transmission%22%20Clarke" target="_blank" rel="noopener noreferrer">HydroHaptics: High-Fidelity Force-Feedback on Soft Deformable Interfaces using Hydrostatic Transmission</a></div>
+            <div class="publication-authors">Nash, James and Sauv'e, Kim and van Riet, Catharina Maria and van Oosterhout, Anke and Sharma, Adwait and <strong>Clarke, Christopher</strong> and Alexander, Jason</div>
+            <div class="publication-venue">Proceedings of the 38th Annual ACM Symposium on User Interface Software and Technology, 2025</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22How%20accessible%20are%20virtual%20reality%20freehand%20gestures%3F%20Understanding%20barriers%20for%20users%20with%20upper%20limb%20motor%20impairments%22%20Clarke" target="_blank" rel="noopener noreferrer">How accessible are virtual reality freehand gestures? Understanding barriers for users with upper limb motor impairments</a></div>
+            <div class="publication-authors">Pococke, Lauren and Jicol, Crescent and Lutteroth, Christof and <strong>Clarke, Christopher</strong></div>
+            <div class="publication-venue">Proceedings of the 27th International ACM SIGACCESS Conference on Computers and Accessibility, 2025</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Understanding%20Freehand%20Cursorless%20Pointing%20Variability%20and%20Its%20Impact%20on%20Selection%20Performance%22%20Clarke" target="_blank" rel="noopener noreferrer">Understanding Freehand Cursorless Pointing Variability and Its Impact on Selection Performance</a></div>
+            <div class="publication-authors">Whiffing, James and Langlotz, Tobias and Lutteroth, Christof and Sharma, Adwait and <strong>Clarke, Christopher</strong></div>
+            <div class="publication-venue">ACM Transactions on Computer-Human Interaction, 2025</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22The%20AI%20of%20the%20beholder%3A%20Experience%20of%20healthcare%20AI%20robots%20is%20shaped%20by%20user-centred%20factors%2C%20not%20their%20visual%20appearance%22%20Clarke" target="_blank" rel="noopener noreferrer">The AI of the beholder: Experience of healthcare AI robots is shaped by user-centred factors, not their visual appearance</a></div>
+            <div class="publication-authors">Yoon, Jinha and Zajac, Patrycja and Pococke, Lauren and Jicol, Anisia and <strong>Clarke, Christopher</strong> and O'neill, Eamonn and Petrini, Karin and Lutteroth, Christof and Jicol, Crescent</div>
+            <div class="publication-venue">IEEE Transactions on Visualization and Computer Graphics, 2025</div>
+        </div>
+        
+<h3 class="year-heading">2024</h3>
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Sweating%20the%20Details%3A%20Emotion%20Recognition%20and%20the%20Influence%20of%20Physical%20Exertion%20in%20Virtual%20Reality%20Exergaming%22%20Clarke" target="_blank" rel="noopener noreferrer">Sweating the Details: Emotion Recognition and the Influence of Physical Exertion in Virtual Reality Exergaming</a></div>
+            <div class="publication-authors">Potts, Dominic and Broad, Zoe and Sehgal, Tarini and Hartley, Joseph and O'Neill, Eamonn and Jicol, Crescent and <strong>Clarke, Christopher</strong> and Lutteroth, Christof</div>
+            <div class="publication-venue">Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems, 2024</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Watch%20this%21%20observational%20learning%20in%20VR%20promotes%20better%20far%20transfer%20than%20active%20learning%20for%20a%20fine%20psychomotor%20task%22%20Clarke" target="_blank" rel="noopener noreferrer">Watch this! observational learning in VR promotes better far transfer than active learning for a fine psychomotor task</a></div>
+            <div class="publication-authors">Fitton, Isabel Sophie and Dark, Elizabeth and Oliveira da Silva, Manoela Milena and Dalton, Jeremy and Proulx, Michael J and <strong>Clarke, Christopher</strong> and Lutteroth, Christof</div>
+            <div class="publication-venue">Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems, 2024</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22REVEAL%3A%20REal%20and%20Virtual%20Environments%20Augmentation%20Lab%40%20Bath%22%20Clarke" target="_blank" rel="noopener noreferrer">REVEAL: REal and Virtual Environments Augmentation Lab@ Bath</a></div>
+            <div class="publication-authors">Potts, Dominic and Jicol, Crescent and <strong>Clarke, Christopher</strong> and O'Neill, Eamonn and Fitton, Isabel Sophie and Dark, Elizabeth and Oliveira Da Silva, Manoela Milena and Broad, Zoe and Sehgal, Tarini and Hartley, Joseph and others</div>
+            <div class="publication-venue">Extended Abstracts of the CHI Conference on Human Factors in Computing Systems, 2024</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22P169%20Optimising%20self-management%20in%20axial%20spondyloarthritis%3A%20a%20qualitative%20exploration%20of%20patient%20perspectives%22%20Clarke" target="_blank" rel="noopener noreferrer">P169 Optimising self-management in axial spondyloarthritis: a qualitative exploration of patient perspectives</a></div>
+            <div class="publication-authors">Barnett, Rosie and <strong>Clarke, Christopher</strong> and Sengupta, Raj and Rouse, Peter</div>
+            <div class="publication-venue">Rheumatology, 2024</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22DeformIO%3A%20Dynamic%20stiffness%20control%20on%20a%20deformable%20force-sensing%20display%22%20Clarke" target="_blank" rel="noopener noreferrer">DeformIO: Dynamic stiffness control on a deformable force-sensing display</a></div>
+            <div class="publication-authors">Nash, James David and Steer, Cameron and Dinca, Teodora and Sharma, Adwait and Favaratto Santos, Alvaro and Wildgoose, Benjamin Timothy and Ager, Alexander and <strong>Clarke, Christopher</strong> and Alexander, Jason</div>
+            <div class="publication-venue">Extended Abstracts of the CHI Conference on Human Factors in Computing Systems, 2024</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22AB1460%20DEVELOPMENT%20STRATEGIES%20AND%20THEORETICAL%20UNDERPINNINGS%20OF%20SMARTPHONE%20APPS%20TO%20SUPPORT%20SELF-MANAGEMENT%20OF%20RHEUMATIC%20AND%20MUSCULOSKELETAL%20DISEASES%3A%20A%20SYSTEMATIC%20LITERATURE%20REVIEW%22%20Clarke" target="_blank" rel="noopener noreferrer">AB1460 DEVELOPMENT STRATEGIES AND THEORETICAL UNDERPINNINGS OF SMARTPHONE APPS TO SUPPORT SELF-MANAGEMENT OF RHEUMATIC AND MUSCULOSKELETAL DISEASES: A SYSTEMATIC LITERATURE REVIEW</a></div>
+            <div class="publication-authors">Barnett, Rosemarie and <strong>Clarke, Christopher</strong> and Sengupta, Raj and Rouse, PC</div>
+            <div class="publication-venue">Annals of the Rheumatic Diseases, 2024</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Accelerating%20XR%20Innovation%20through%20a%20pan-European%20Lab%20Network%3A%20An%20overview%20of%20the%20EMIL%20project%22%20Clarke" target="_blank" rel="noopener noreferrer">Accelerating XR Innovation through a pan-European Lab Network: An overview of the EMIL project</a></div>
+            <div class="publication-authors">Bl"onnigen, Justus and <strong>Clarke, Christopher</strong> and Dahn, Andreas and Forelli, Lisa and Gowrishankar, Ramyah and Heikura, Tuija and Helzle, Volker and Hine, Paul and Jicol, Crescent and Kreische, Alexander and others</div>
+            <div class="publication-venue">Proceedings of the 2024 ACM International Conference on Interactive Media Experiences Workshops, 2024</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22To%20explore%20the%20relationship%20between%20affective%20states%20and%20engagement%20in%20%28digital%29%20mental%20well-being%20promotional%20activities%20in%20students.%22%20Clarke" target="_blank" rel="noopener noreferrer">To explore the relationship between affective states and engagement in (digital) mental well-being promotional activities in students.</a></div>
+            <div class="publication-authors">Groot, Julia and Brosnan, Mark and Gjersoe, Nathalia and Ainsworth, Ben and <strong>Clarke, Christopher</strong></div>
+            <div class="publication-venue">, 2024</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Dataset%20for%20%22Sweating%20The%20Details%3A%20Emotion%20Recognition%20and%20the%20Influence%20of%20Physical%20Exertion%20in%20Virtual%20Reality%20Exergaming%22%20and%20EmoSense%20SDK%22%20Clarke" target="_blank" rel="noopener noreferrer">Dataset for "Sweating The Details: Emotion Recognition and the Influence of Physical Exertion in Virtual Reality Exergaming" and EmoSense SDK</a></div>
+            <div class="publication-authors">Potts, Dominic and Hartley, Joe and Jicol, Crescent and <strong>Clarke, Christopher</strong> and Lutteroth, Christof</div>
+            <div class="publication-venue">, 2024</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Watch%20Out%21%20XR%20Mobile%20Displays%20Improve%20the%20Experience%20of%20Co-Located%20VR%20Gaming%20Observers%22%20Clarke" target="_blank" rel="noopener noreferrer">Watch Out! XR Mobile Displays Improve the Experience of Co-Located VR Gaming Observers</a></div>
+            <div class="publication-authors">Salagean, Anca and Jicol, Crescent and Dasalla, Kenneth and <strong>Clarke, Christopher</strong> and Lutteroth, Christof</div>
+            <div class="publication-venue">2024 IEEE International Symposium on Mixed and Augmented Reality (ISMAR), 2024</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Exploring%20the%20%22EarSwitch%22%20concept%3A%20a%20novel%20ear%20based%20control%20method%20for%20assistive%20technology%22%20Clarke" target="_blank" rel="noopener noreferrer">Exploring the "EarSwitch" concept: a novel ear based control method for assistive technology</a></div>
+            <div class="publication-authors">Hoyle, Anna C and Stevenson, Richard and Leonhardt, Martin and Gillett, Thomas and Martinez-Hernandez, Uriel and Gompertz, Nick and <strong>Clarke, Christopher</strong> and Cazzola, Dario and Metcalfe, Benjamin W</div>
+            <div class="publication-venue">Journal of NeuroEngineering and Rehabilitation, 2024</div>
+        </div>
+        
+<h3 class="year-heading">2023</h3>
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Vergence%20matching%3A%20Inferring%20attention%20to%20objects%20in%203d%20environments%20for%20gaze-assisted%20selection%22%20Clarke" target="_blank" rel="noopener noreferrer">Vergence matching: Inferring attention to objects in 3d environments for gaze-assisted selection</a></div>
+            <div class="publication-authors">Sidenmark, Ludwig and <strong>Clarke, Christopher</strong> and Newn, Joshua and Lystbaek, Mathias N and Pfeuffer, Ken and Gellersen, Hans</div>
+            <div class="publication-venue">Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems, 2023</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Realism%20and%20field%20of%20view%20affect%20presence%20in%20VR%20but%20not%20the%20way%20you%20think%22%20Clarke" target="_blank" rel="noopener noreferrer">Realism and field of view affect presence in VR but not the way you think</a></div>
+            <div class="publication-authors">Jicol, Crescent and <strong>Clarke, Christopher</strong> and Tor, Emilia and Dakin, Rebecca M and Lancaster, Tom Charlie and Chang, Sze Tung and Petrini, Karin and O'Neill, Eamonn and Proulx, Michael J and Lutteroth, Christof</div>
+            <div class="publication-venue">Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems, 2023</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Imagine%20that%21%20imaginative%20suggestibility%20affects%20presence%20in%20virtual%20reality%22%20Clarke" target="_blank" rel="noopener noreferrer">Imagine that! imaginative suggestibility affects presence in virtual reality</a></div>
+            <div class="publication-authors">Jicol, Crescent and <strong>Clarke, Christopher</strong> and Tor, Emilia and Yip, Hiu Lam and Yoon, Jinha and Bevan, Chris and Bowden, Hugh and Brann, Elisa and Cater, Kirsten and Cole, Richard and others</div>
+            <div class="publication-venue">Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems, 2023</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Dancing%20with%20the%20avatars%3A%20minimal%20avatar%20customisation%20enhances%20learning%20in%20a%20psychomotor%20task%22%20Clarke" target="_blank" rel="noopener noreferrer">Dancing with the avatars: minimal avatar customisation enhances learning in a psychomotor task</a></div>
+            <div class="publication-authors">Fitton, Isabel and <strong>Clarke, Christopher</strong> and Dalton, Jeremy and Proulx, Michael J and Lutteroth, Christof</div>
+            <div class="publication-venue">Proceedings of the 2023 CHI conference on human factors in computing systems, 2023</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22FakeForward%3A%20using%20deepfake%20technology%20for%20feedforward%20learning%22%20Clarke" target="_blank" rel="noopener noreferrer">FakeForward: using deepfake technology for feedforward learning</a></div>
+            <div class="publication-authors"><strong>Clarke, Christopher</strong> and Xu, Jingnan and Zhu, Ye and Dharamshi, Karan and McGill, Harry and Black, Stephen and Lutteroth, Christof</div>
+            <div class="publication-venue">Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems, 2023</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22REVEAL%3A%20REal%20and%20Virtual%20Environments%20Augmentation%20Lab%40%20Bath%22%20Clarke" target="_blank" rel="noopener noreferrer">REVEAL: REal and Virtual Environments Augmentation Lab@ Bath</a></div>
+            <div class="publication-authors">Lutteroth, Christof and Jicol, Crescent and <strong>Clarke, Christopher</strong> and Proulx, Michael J and O'Neill, Eamonn and Petrini, Karin and Fitton, Isabel Sophie and Tor, Emilia and Yoon, Jinha</div>
+            <div class="publication-venue">Extended Abstracts of the 2023 CHI Conference on Human Factors in Computing Systems, 2023</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22The%20effectiveness%20of%20fully%20automated%20digital%20interventions%20in%20promoting%20mental%20well-being%20in%20the%20general%20population%3A%20systematic%20review%20and%20meta-analysis%22%20Clarke" target="_blank" rel="noopener noreferrer">The effectiveness of fully automated digital interventions in promoting mental well-being in the general population: systematic review and meta-analysis</a></div>
+            <div class="publication-authors">Groot, Julia and MacLellan, Alexander and Butler, Madelaine and Todor, Elisa and Zulfiqar, Mahnoor and Thackrah, Timothy and <strong>Clarke, Christopher</strong> and Brosnan, Mark and Ainsworth, Ben and others</div>
+            <div class="publication-venue">JMIR mental health, 2023</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Protocol%20for%20a%20systematic%20literature%20review%20of%20smartphone%20apps%20to%20support%20the%20self-management%20of%20rheumatic%20and%20musculoskeletal%20diseases%3A%20development%20strategies%2C%20theoretical%20underpinnings%20and%20barriers%20to%20engagement%22%20Clarke" target="_blank" rel="noopener noreferrer">Protocol for a systematic literature review of smartphone apps to support the self-management of rheumatic and musculoskeletal diseases: development strategies, theoretical underpinnings and barriers to engagement</a></div>
+            <div class="publication-authors">Barnett, Rosemarie and <strong>Clarke, Christopher</strong> and Sengupta, Raj and Rouse, Peter C</div>
+            <div class="publication-venue">Systematic Reviews, 2023</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22PROTOCOL%20Open%20Access%22%20Clarke" target="_blank" rel="noopener noreferrer">PROTOCOL Open Access</a></div>
+            <div class="publication-authors">Barnett, Rosemarie and <strong>Clarke, Christopher</strong> and Sengupta, Raj and Rouse, Peter C</div>
+            <div class="publication-venue">, 2023</div>
+        </div>
+        
+<h3 class="year-heading">2022</h3>
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Advanced%20Visual%20Interfaces%20for%20Augmented%20Video%22%20Clarke" target="_blank" rel="noopener noreferrer">Advanced Visual Interfaces for Augmented Video</a></div>
+            <div class="publication-authors">Coccoli, Mauro and Galluccio, Ilenia and Torre, Ilaria and Amenduni, Francesca and Cattaneo, Alberto and <strong>Clarke, Christopher</strong></div>
+            <div class="publication-venue">Proceedings of the 2022 International Conference on Advanced Visual Interfaces, 2022</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Step%20into%20my%20mind%20palace%3A%20Exploration%20of%20a%20collaborative%20paragogy%20tool%20in%20VR%22%20Clarke" target="_blank" rel="noopener noreferrer">Step into my mind palace: Exploration of a collaborative paragogy tool in VR</a></div>
+            <div class="publication-authors">Sims, Robert and Chang, Barry and Bennett, Verity and Krishnan, Advaith and Aboubakar, Abdalslam and Coman, George and Bahrami, Abdulrazak and Huang, Zehao and <strong>Clarke, Christopher</strong> and Karnik, Abhijit</div>
+            <div class="publication-venue">2022 8th International Conference of the Immersive Learning Research Network (iLRN), 2022</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Sensing%20with%20earables%3A%20A%20systematic%20literature%20review%20and%20taxonomy%20of%20phenomena%22%20Clarke" target="_blank" rel="noopener noreferrer">Sensing with earables: A systematic literature review and taxonomy of phenomena</a></div>
+            <div class="publication-authors">R"oddiger, Tobias and <strong>Clarke, Christopher</strong> and Breitling, Paula and Schneegans, Tim and Zhao, Haibin and Gellersen, Hans and Beigl, Michael</div>
+            <div class="publication-venue">Proceedings of the ACM on interactive, mobile, wearable and ubiquitous technologies, 2022</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22OpenEarable%3A%20Open%20Hardware%20Earable%20Sensing%20Platform%22%20Clarke" target="_blank" rel="noopener noreferrer">OpenEarable: Open Hardware Earable Sensing Platform</a></div>
+            <div class="publication-authors">R"oddiger, Tobias and King, Tobias and Roodt, Dylan Ray and <strong>Clarke, Christopher</strong> and Beigl, Michael</div>
+            <div class="publication-venue">EarComp 2022, 2022</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Excerpt%20from%20%E2%80%9CSensing%20with%20Earables%3A%20A%20Systematic%20Literature%20Review%20and%20Taxonomy%20of%20Phenomena%E2%80%9D%22%20Clarke" target="_blank" rel="noopener noreferrer">Excerpt from “Sensing with Earables: A Systematic Literature Review and Taxonomy of Phenomena”</a></div>
+            <div class="publication-authors">R"oddiger, Tobias and <strong>Clarke, Christopher</strong> and Breitling, Paula and Schneegans, Tim and Zhao, Haibin and Gellersen, Hans and Beigl, Michael</div>
+            <div class="publication-venue">Adjunct Proceedings of the 2022 ACM International Joint Conference on Pervasive and Ubiquitous Computing and the 2022 ACM International Symposium on Wearable Computers, 2022</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22ETRA%2722%3A%202022%20Symposium%20on%20Eye%20Tracking%20Research%20and%20Applications%22%20Clarke" target="_blank" rel="noopener noreferrer">ETRA'22: 2022 Symposium on Eye Tracking Research and Applications</a></div>
+            <div class="publication-authors">Shic, Frederick and Kasneci, Enkelejda and Khamis, Mohamed and Gellersen, Hans and Krejtz, Krzysztof and Weiskopf, Daniel and Blascheck, Tanja and Bradshaw, Jessica and Vrzakova, Hana and Binaee, Kamran and others</div>
+            <div class="publication-venue">Symposium on Eye Tracking Research and Applications (ETRA 2022), 2022</div>
+        </div>
+        
+<h3 class="year-heading">2021</h3>
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22EarRumble%3A%20Discreet%20Hands-and%20Eyes-Free%20Input%20by%20Voluntary%20Tensor%20Tympani%20Muscle%20Contraction%22%20Clarke" target="_blank" rel="noopener noreferrer">EarRumble: Discreet Hands-and Eyes-Free Input by Voluntary Tensor Tympani Muscle Contraction</a></div>
+            <div class="publication-authors">R"oddiger, Tobias and <strong>Clarke, Christopher</strong> and Wolffram, Daniel and Budde, Matthias and Beigl, Michael</div>
+            <div class="publication-venue">ACM CHI 2021, 2021</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Gaze%2B%20Hold%3A%20Eyes-only%20Direct%20Manipulation%20with%20Continuous%20Gaze%20Modulated%20by%20Closure%20of%20One%20Eye%22%20Clarke" target="_blank" rel="noopener noreferrer">Gaze+ Hold: Eyes-only Direct Manipulation with Continuous Gaze Modulated by Closure of One Eye</a></div>
+            <div class="publication-authors">Gomez, Argenis Ramirez and <strong>Clarke, Christopher</strong> and Sidenmark, Ludwig and Gellersen, Hans</div>
+            <div class="publication-venue">ACM ETRA 2021, 2021</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Reactive%20Video%3A%20Movement%20Sonification%20as%20Auditory%20Feedback%20for%20Supporting%20Physical%20Activity%22%20Clarke" target="_blank" rel="noopener noreferrer">Reactive Video: Movement Sonification as Auditory Feedback for Supporting Physical Activity</a></div>
+            <div class="publication-authors">Cavdir, Doga and <strong>Clarke, Christopher</strong> and Chiu, Patrick and Denoue, Laurent and Kimber, Don</div>
+            <div class="publication-venue">New Interfaces for Musical Expression (NIME) 2021, 2021</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22The%20environmental%20impact%20of%20research%20communities%3A%20insights%20from%20conference%20sustainability%20chairs%22%20Clarke" target="_blank" rel="noopener noreferrer">The environmental impact of research communities: insights from conference sustainability chairs</a></div>
+            <div class="publication-authors">Williams, Kristin and Kane, Bridget and Clarke, Chris and Widdicks, Kelly</div>
+            <div class="publication-venue">XRDS: Crossroads, The ACM Magazine for Students, 2021</div>
+        </div>
+        
+<h3 class="year-heading">2020</h3>
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Outline%20Pursuits%3A%20Gaze-assisted%20Selection%20of%20Occluded%20Objects%20in%20Virtual%20Reality%22%20Clarke" target="_blank" rel="noopener noreferrer">Outline Pursuits: Gaze-assisted Selection of Occluded Objects in Virtual Reality</a></div>
+            <div class="publication-authors">Sidenmark*, Ludwig and Clarke*, Christopher and Zhang, Xuesong and Phu, Jenny and Gellersen, Hans</div>
+            <div class="publication-venue">ACM CHI 2020</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22BimodalGaze%3A%20Seamlessly%20Refined%20Pointing%20with%20Gaze%20and%20Filtered%20Gestural%20Head%20Movement%22%20Clarke" target="_blank" rel="noopener noreferrer">BimodalGaze: Seamlessly Refined Pointing with Gaze and Filtered Gestural Head Movement</a></div>
+            <div class="publication-authors">Sidenmark, Ludwig and Mardanbegi, Diako and Gomez, Argenis Ramirez and <strong>Clarke, Christopher</strong> and Gellersen, Hans</div>
+            <div class="publication-venue">ACM ETRA 2020, 2020</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Dynamic%20motion%20coupling%20of%20body%20movement%20for%20input%20control%22%20Clarke" target="_blank" rel="noopener noreferrer">Dynamic motion coupling of body movement for input control</a></div>
+            <div class="publication-authors"><strong>Clarke, Christopher</strong></div>
+            <div class="publication-venue">Lancaster University (United Kingdom), 2020</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Reactive%20Video%3A%20Adaptive%20Video%20Playback%20Based%20on%20User%20Motion%20for%20Supporting%20Physical%20Activity%22%20Clarke" target="_blank" rel="noopener noreferrer">Reactive Video: Adaptive Video Playback Based on User Motion for Supporting Physical Activity</a></div>
+            <div class="publication-authors"><strong>Clarke, Christopher</strong> and Cavdir, Doga and Chiu, Patrick and Denoue, Laurent and Kimber, Don</div>
+            <div class="publication-venue">ACM UIST 2020</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Motion%20Coupling%20of%20Earable%20Devices%20in%20Camera%20View%22%20Clarke" target="_blank" rel="noopener noreferrer">Motion Coupling of Earable Devices in Camera View</a></div>
+            <div class="publication-authors"><strong>Clarke, Christopher</strong> and Ehrich, Peter and Gellersen, Hans</div>
+            <div class="publication-venue">ACM MUM 2020</div>
+        </div>
+        
+<h3 class="year-heading">2019</h3>
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Monocular%20gaze%20depth%20estimation%20using%20the%20vestibulo-ocular%20reflex%22%20Clarke" target="_blank" rel="noopener noreferrer">Monocular gaze depth estimation using the vestibulo-ocular reflex</a></div>
+            <div class="publication-authors">Mardanbegi, Diako and <strong>Clarke, Christopher</strong> and Gellersen, Hans</div>
+            <div class="publication-venue">ACM ETRA 2019, 2019</div>
+        </div>
+        
+<h3 class="year-heading">2017</h3>
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22AURORA%3A%20autonomous%20real-time%20on-board%20video%20analytics%22%20Clarke" target="_blank" rel="noopener noreferrer">AURORA: autonomous real-time on-board video analytics</a></div>
+            <div class="publication-authors">Angelov, Plamen and Sadeghi-Tehran, Pouria and <strong>Clarke, Christopher</strong></div>
+            <div class="publication-venue">Neural Computing and Applications, 2017</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Motion%20correlation%3A%20Selecting%20objects%20by%20matching%20their%20movement%22%20Clarke" target="_blank" rel="noopener noreferrer">Motion correlation: Selecting objects by matching their movement</a></div>
+            <div class="publication-authors">Velloso, Eduardo and Carter, Marcus and Newn, Joshua and Esteves, Augusto and <strong>Clarke, Christopher</strong> and Gellersen, Hans</div>
+            <div class="publication-venue">ACM Transactions on Computer-Human Interaction (TOCHI), 2017</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Remote%20control%20by%20body%20movement%20in%20synchrony%20with%20orbiting%20widgets%3A%20An%20evaluation%20of%20TraceMatch%22%20Clarke" target="_blank" rel="noopener noreferrer">Remote control by body movement in synchrony with orbiting widgets: An evaluation of TraceMatch</a></div>
+            <div class="publication-authors"><strong>Clarke, Christopher</strong> and Bellino, Alessio and Esteves, Augusto and Gellersen, Hans</div>
+            <div class="publication-venue">Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies, 2017</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22MatchPoint%3A%20Spontaneous%20Spatial%20Coupling%20of%20Body%20Movement%20for%20Touchless%20Pointing%22%20Clarke" target="_blank" rel="noopener noreferrer">MatchPoint: Spontaneous Spatial Coupling of Body Movement for Touchless Pointing</a></div>
+            <div class="publication-authors"><strong>Clarke, Christopher</strong> and Gellersen, Hans</div>
+            <div class="publication-venue">ACM UIST 2017, 2017</div>
+        </div>
+        
+<h3 class="year-heading">2016</h3>
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22TraceMatch%3A%20a%20computer%20vision%20technique%20for%20user%20input%20by%20tracing%20of%20animated%20controls%22%20Clarke" target="_blank" rel="noopener noreferrer">TraceMatch: a computer vision technique for user input by tracing of animated controls</a></div>
+            <div class="publication-authors"><strong>Clarke, Christopher</strong> and Bellino, Alessio and Esteves, Augusto and Velloso, Eduardo and Gellersen, Hans</div>
+            <div class="publication-venue">Proceedings of the 2016 ACM International Joint Conference on Pervasive and Ubiquitous Computing, 2016</div>
+        </div>
+        
+<h3 class="year-heading">2015</h3>
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Self-defining%20memory%20cues%3A%20creative%20expression%20and%20emotional%20meaning%22%20Clarke" target="_blank" rel="noopener noreferrer">Self-defining memory cues: creative expression and emotional meaning</a></div>
+            <div class="publication-authors">Sas, Corina and Challioner, Scott and <strong>Clarke, Christopher</strong> and Wilson, Ross and Coman, Alina and Clinch, Sarah and Harding, Mike and Davies, Nigel</div>
+            <div class="publication-venue">Proceedings of the 33rd Annual ACM Conference Extended Abstracts on Human Factors in Computing Systems, 2015</div>
+        </div>
+        
+<h3 class="year-heading">2014</h3>
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22Sariva%3A%20Smartphone%20app%20for%20real-time%20intelligent%20video%20analytics%22%20Clarke" target="_blank" rel="noopener noreferrer">Sariva: Smartphone app for real-time intelligent video analytics</a></div>
+            <div class="publication-authors"><strong>Clarke, Christopher</strong> and Angelov, Plamen and Yusufu, M and Sadeghi-Tehran, Pouria</div>
+            <div class="publication-venue">Journal of Automation Mobile Robotics and Intelligent Systems, 2014</div>
+        </div>
+        
+
+        <div class="publication-item">
+            <div class="publication-title"><a href="https://scholar.google.com/scholar?q=%22A%20real-time%20approach%20for%20autonomous%20detection%20and%20tracking%20of%20moving%20objects%20from%20UAV%22%20Clarke" target="_blank" rel="noopener noreferrer">A real-time approach for autonomous detection and tracking of moving objects from UAV</a></div>
+            <div class="publication-authors">Sadeghi-Tehran, Pouria and <strong>Clarke, Christopher</strong> and Angelov, Plamen</div>
+            <div class="publication-venue">2014 IEEE Symposium on Evolving and Autonomous Learning Systems (EALS), 2014</div>
+        </div>
+        
+
+    </section>
+
+    <!-- Research Grants Section -->
+    <section id="grants">
+        <h2>Research Grants</h2>
+        <p>Whilst in academia, I have received research funding from a number of sources including (as PI*):</p>
+
+        <div class="grant-item">
+            <div class="grant-title">Novel Wearable-based Stress Measurement Using Smartwatch and Earables*</div>
+            <div class="grant-funder">UKRI Engineering and Physical Sciences Research Council (EPSRC)</div>
+            <div class="grant-amount">Total Awarded: Approx. £72,798</div>
         </div>
 
-        <div id="supervision">
-            <div class="js__parallax-window" style="background: url(images/full_1.jpg) 50% 18px no-repeat fixed;">
-                <div class="container g-text-center--xs g-padding-y-80--xs g-padding-y-15--sm">
-                    <div class="g-margin-b-80--xs">
-                        <h3 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md g-color--white"><br>PhD Supervision</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="container content">
-                <div class="row margin-b-40">
-                    <p style="font-size: 16px; color: #515769; font-weight: 500;">I am very lucky to work with amazing PhD students and co-supervisors across a range of topics, listed in order of expected graduation date:</p>
-                    <ul>
-                        <li><a href="https://researchportal.bath.ac.uk/en/persons/violet-henderson">Dr Violet Henderson (graduated 2024)</a> - <i>"Using Smartphone Tools to Enable Home-Measurement of the BASMI"</i>. Supervised with <a href="https://researchportal.bath.ac.uk/en/persons/dario-cazzola">Dr. Dario Cazzola</a>, <a href="https://www.ruh.nhs.uk/RNHRD/patients/services/rheumatology/AS_service/team.asp?menu_id=2">Prof. Raj Sengupta</a>, and <a href="">Dr. Simon Jones</a>.</li>
-                        <li><a href="https://researchportal.bath.ac.uk/en/persons/izzy-fitton">Dr Izzy Fitton (graduated 2024)</a> - <i>"Observational Learning for Psychomotor Skills Training in Virtual Environments"</i>. Co-supervised with <a href="http://lutteroth.me/">Dr. Christof Lutteroth</a>, <a href="https://researchportal.bath.ac.uk/en/persons/michael-proulx">Dr. Michael Proulx</a>, and <a href="https://jeremydaltonxr.com/">Jeremy Dalton</a>.</li>
-                        <li><a href="https://researchportal.bath.ac.uk/en/persons/julia-groot">Dr Julia Groot (graduated 2025)</a> - <i>"Evaluating Engagement and Effectiveness of Digital Health Technology to Promote and Support Mental Health and Well-being"</i>. Co-supervised with <a href="https://researchportal.bath.ac.uk/en/persons/mark-brosnan">Prof. Mark Brosnan</a> and <a href="https://www.southampton.ac.uk/people/5xbf59/doctor-ben-ainsworth">Dr. Ben Ainsworth</a>.</li>
-                        <li><a href="https://researchportal.bath.ac.uk/en/persons/rosie-barnett">Rosie Barnett</a> - <i>"Exploration of digital interventions to support the self-management of axial spondyloarthritis"</i>. Co-supervised with <a href="https://researchportal.bath.ac.uk/en/persons/peter-rouse">Dr. Peter Rouse</a> and <a href="https://www.ruh.nhs.uk/RNHRD/patients/services/rheumatology/AS_service/team.asp?menu_id=2">Prof. Raj Sengupta</a>.</li>
-                        <li><a href="https://researchportal.bath.ac.uk/en/persons/james-nash">James Nash</a> - <i>"Creating and Evaluating Novel Fluid-Powered, Force-Responsive Displays"</i>. Co-supervised with <a href="http://www.jasonalexander.kiwi/">Prof. Jason Alexander</a> and <a href="https://www.adwaitsharma.com/">Dr. Adwait Sharma</a>.</li>
-                        <li><a href="https://researchportal.bath.ac.uk/en/persons/james-whiffing">James Whiffing</a> - <i>"Adaptive Pointing for Selection of Targets at a Distance"</i>. Supervised with <a href="https://www.otago.ac.nz/school-of-computing/our-people/tobias-langlotz">Prof. Tobias Langlotz</a>, <a href="https://www.adwaitsharma.com/">Dr. Adwait Sharma</a>, and <a href="http://lutteroth.me/">Dr. Christof Lutteroth</a>.</li>
-						<li><a href="https://researchportal.bath.ac.uk/en/persons/lauren-pococke">Lauren Pococke</a> - <i>"Gesture Augmentation for Virtual Reality Motor Accessibility"</i>. Supervised with <a href="http://lutteroth.me/">Dr. Christof Lutteroth</a>.</li>
-						<li><a href="https://cdt-art-ai.ac.uk/students/greg-knowles/">Greg Knowles</a> - <i>"AI-based mobility monitoring of axial spondyloarthritis patients using wearable sensors"</i>. Supervised with <a href="https://researchportal.bath.ac.uk/en/persons/benjamin-metcalfe">Dr. Benjamin Metcalfe</a> and <a href="https://www.ruh.nhs.uk/RNHRD/patients/services/rheumatology/AS_service/team.asp?menu_id=2">Prof. Raj Sengupta</a>.</li>
-                        <li><a href="https://cdt-art-ai.ac.uk/students/yige-yang/">Yige Yang</a> - <i>"Detecting affective states and brain interfacing in the real world and in multitasking scenarios: A Neurotechnological Approach"</i>. Co-supervised with <a href="https://researchportal.bath.ac.uk/en/persons/damien-coyle">Prof. Damien Coyle</a> and <a href="">Dr. Crescent Jicol</a>.</li>
-                        <li><a href="https://researchportal.bath.ac.uk/en/persons/alaa-kattan/">Alaa Kattan</a> - <i>"	Effect of Pain and Kinesiophobia on Biomechanical Parameters, Muscle Activation Strategies, and Spinal Mobility in Axial Spondyloarthritis Patients During and After Flare Stage, and Implementation of Virtual Reality Rehabilitation."</i>. Co-supervised with <a href="https://researchportal.bath.ac.uk/en/persons/dario-cazzola">Dr. Dario Cazzola</a>, <a href="https://researchportal.bath.ac.uk/en/persons/peter-rouse">Dr. Peter Rouse</a>, <a href="https://researchportal.bath.ac.uk/en/persons/logan-wade/">Dr. Logan Wade</a>, and <a href="https://www.ruh.nhs.uk/RNHRD/patients/services/rheumatology/AS_service/team.asp?menu_id=2">Prof. Raj Sengupta</a>.</li>
-                    </ul>
-                    <p style="font-size: 16px; color: #515769; font-weight: 500;">If you are interested in undertaking a PhD with me please get in touch! We advertise funded opportunities on <a href="https://www.findaphd.com/phds/united-kingdom/human-computer-interaction/university-of-bath/?n0M7g2w1zM40">FindAPhD (click here)</a>, but there are always other opportunities for excellent students.</p>
-                </div>
-            </div>
+        <div class="grant-item">
+            <div class="grant-title">Age inclusive technology for active ageing in retirement living</div>
+            <div class="grant-funder">UKRI Economic and Social Research Council (ESRC)</div>
+            <div class="grant-amount">Total Awarded: Approx. £18,877</div>
         </div>
 
-        <div id="professional-activities">
-            <div class="js__parallax-window" style="background: url(images/full_1.jpg) 50% 18px no-repeat fixed;">
-                <div class="container g-text-center--xs g-padding-y-80--xs g-padding-y-15--sm">
-                    <div class="g-margin-b-80--xs">
-                        <h3 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md g-color--white"><br>Professional Activities</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="container content">
-                <div class="row margin-b-40">
-                    <p style="font-size: 16px; color: #515769; font-weight: 500;">Program committee member:</p>
-                    <ul>
-                        <li>ISWC 2025 - Associate Chair</li>
-						<li>CHI 2025 - Associate Chair (Computational Interaction)</li>
-						<li>UIST 2024 - Associate Chair</li>
-						<li>ISWC 2024 - Associate Chair</li>
-						<li>CHI 2024 - Associate Chair (Understanding People — Statistical and Quantitative Methods)</li>
-						<li>ETRA 2023 Short Papers - Associate Chair</li>
-						<li>NordiCHI 2022 - Associate Chair</li>
-                        <li>MUM 2021 – Awards Committee</li>
-                        <li>MUM 2021 – Associate Chair for Long/Short Papers and Posters</li>
-                        <li>CHI LBW 2021 – Associate Chair</li>
-                        <li>INTERACT 2021 Full papers – Associate Chair</li>
-                        <li>INTERACT 2021 Short papers – Associate Chair</li>
-                        <li>NordiCHI 2020 – Associate Chair</li>
-                        <li>ACM Symposium on Communication by Gaze Interaction (COGAIN) 2020</li>
-                        <li>ACM Symposium on Eye Tracking Research & Applications (ETRA) 2019</li>
-                        <li>ACM Multimedia 2019 - Demo track</li>
-                    </ul>
-                    <p style="font-size: 16px; color: #515769; font-weight: 500;">Organising committee member and service:</p>
-                    <ul>
-                        <li>COGAIN Symposium 2023 Program committee co-chair</li>
-						<li>Advanced Visual Interfaces (AVI) 2022 Workshop Co-organiser for Augmented Video</li>
-                        <li>Eye Tracking Research and Applications (ETRA) 2022 Demo and Videos co-chair</li>
-                        <li>User Interface Software and Technology (UIST) 2021 Session Chair</li>
-                        <li>User Interface Software and Technology (UIST) 2020-21 Sustainability co-chair</li>
-                    </ul>
-                    <p style="font-size: 16px; color: #515769; font-weight: 500;">Reviewer of research articles in HCI & UbiComp conferences/journals:</p>
-                    <ul>
-                        <li>ACM SIGCHI Conference on Human Factors in Computing Systems (CHI)</li>
-                        <li>ACM Annual Symposium on User Interface Software and Technology (UIST)</li>
-                        <li>PACM Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT)</li>
-                        <li>ACM Transactions on Computer-Human Interaction (TOCHI)</li>
-                        <li>Other ACM Conferences including ISS, DIS, ETRA, TEI, CHI Play, MUM</li>
-                        <li>IEEE International Symposium on Mixed and Augmented Reality (ISMAR)</li>
-                        <li>Special Recognition for Outstanding Reviews at CHI'19, CHI'22, ETRA'22, CHI'23 (x2), DIS'23, CHI'24, and ISMAR'24 Journals</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="grant-item">
+            <div class="grant-title">iSTEP: Intelligent inclusive Social Television-based Exercise snacking Project</div>
+            <div class="grant-funder">UKRI Economic and Social Research Council (ESRC)</div>
+            <div class="grant-amount">Total Awarded: Approx. £105,844</div>
         </div>
 
+        <div class="grant-item">
+            <div class="grant-title"><a href="https://emil-xr.eu/">European Media and Immersion Lab (EMIL)</a></div>
+            <div class="grant-funder">Horizon Europe and UK Research and Innovation (UKRI)</div>
+            <div class="grant-amount">Total Awarded: Approx. €8,000,000</div>
+        </div>
 
-        <!--========== END PAGE LAYOUT ==========-->
+        <div class="grant-item">
+            <div class="grant-title"><a href="https://www.fundingawards.nihr.ac.uk/award/NIHR203872">Hands free-control of upper arm prostheses using The Earswitch, and translation to functional, active, assistive support (The Earswitch FAAS-brace) for upper-limb weakness post-stroke, cervical spinal cord injury and neuropathies</a></div>
+            <div class="grant-funder">National Institute for Health Research (NIHR)</div>
+            <div class="grant-amount">Total Awarded: £69,870</div>
+        </div>
 
-        <!--========== FOOTER ==========-->
-        <footer class="footer">
-            <div class="content container">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <img class="footer-logo" src="img/logo.png" alt="Acecv Logo">
-                    </div>
-					<div class="col-xs-6 text-right sm-text-left">
-                        <p>Copyright &copy 2025 Christopher Clarke. All Rights Reserved.</p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>This page was last updated in June 2025.</p>
-                    </div>
-					<div class="col-xs-6 text-right sm-text-left">
-                        <p class="margin-b-0"><a class="fweight-700" href="http://keenthemes.com/preview/acecv/">Acecv</a> Theme Powered by: <a class="fweight-700" href="http://www.keenthemes.com/">KeenThemes.com</a></p>
-                    </div>
-                </div>
-                <!--// end row -->
-            </div>
-        </footer>
-        <!--========== END FOOTER ==========-->
+        <div class="grant-item">
+            <div class="grant-title"><a href="https://fundingawards.nihr.ac.uk/award/NIHR203387">The Earswitch: NIHR i4i PDA: taking proof-of-concept via co-design and objective technical/ user validation to a user ready assistive technology switch, incorporating wider health and care innovative sensor applications</a></div>
+            <div class="grant-funder">National Institute for Health Research (NIHR)</div>
+            <div class="grant-amount">Total Awarded: £1,449,793</div>
+        </div>
 
-        <!-- Back To Top -->
-        <a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
+        <div class="grant-item">
+            <div class="grant-title"><a href="https://www.birdbath.org.uk/wp-content/uploads/2022/01/BIRD-Summer-Studentships-2022.pdf">BIRD Summer Studentship 2022*</a></div>
+            <div class="grant-funder">Bath Institute for Rheumatic Diseases (BIRD)</div>
+            <div class="grant-amount">Total Awarded: £2,840</div>
+        </div>
 
-        <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-        <!-- CORE PLUGINS -->
-        <script src="vendor/jquery.min.js" type="text/javascript"></script>
-        <script src="vendor/jquery-migrate.min.js" type="text/javascript"></script>
-        <script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <h3>Industry Grants</h3>
+        <p>Also, during my time at Veraz Ltd I co-authored several successful funding proposals:</p>
 
-        <!-- PAGE LEVEL PLUGINS -->
-        <script src="vendor/jquery.easing.js" type="text/javascript"></script>
-        <script src="vendor/jquery.back-to-top.js" type="text/javascript"></script>
-        <script src="vendor/jquery.smooth-scroll.js" type="text/javascript"></script>
-        <script src="vendor/jquery.wow.min.js" type="text/javascript"></script>
-        <script src="vendor/jquery.parallax.min.js" type="text/javascript"></script>
-        <script src="vendor/jquery.appear.js" type="text/javascript"></script>
-        <script src="vendor/swiper/js/swiper.jquery.min.js" type="text/javascript"></script>
+        <div class="grant-item">
+            <div class="grant-title"><a href="https://sbrihealthcare.co.uk/company/veraz/">The Green Badge System (Phase 3 Competition)</a></div>
+            <div class="grant-funder">Small Business Research Initiative (SBRI) Healthcare</div>
+            <div class="grant-amount">Total Awarded: £928,462</div>
+        </div>
 
-        <!-- PAGE LEVEL SCRIPTS -->
-        <script src="js/layout.min.js" type="text/javascript"></script>
-        <script src="js/components/progress-bar.min.js" type="text/javascript"></script>
-        <script src="js/components/swiper.min.js" type="text/javascript"></script>
-        <script src="js/components/wow.min.js" type="text/javascript"></script>
+        <div class="grant-item">
+            <div class="grant-title"><a href="https://sbrihealthcare.co.uk/company/veraz-ltd/">Care Tracker - automatic care quality assurance - hospital to home</a></div>
+            <div class="grant-funder">Small Business Research Initiative (SBRI) Healthcare</div>
+            <div class="grant-amount">Total Awarded: £98,853</div>
+        </div>
 
-    </body>
-    <!-- END BODY -->
+        <div class="grant-item">
+            <div class="grant-title"><a href="https://old.food.gov.uk/sites/default/files/annual-%20science-report-2013-14.pdf">FSA Strategic challenge 2012: Green badge system for food safety</a></div>
+            <div class="grant-funder">Food Standards Agency (FSA)</div>
+            <div class="grant-amount">Total Awarded: £54,728</div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards">
+        <h2>Awards</h2>
+
+        <div class="award-item">
+            <div class="award-title">2025 - UIST'25 Best Paper Honourable Mention</div>
+            <p>For <a href="https://dl.acm.org/doi/10.1145/3746059.3747679">HydroHaptics: High-Fidelity Force-Feedback on Soft Deformable Interfaces using Hydrostatic Transmission</a></p>
+        </div>
+
+        <div class="award-item">
+            <div class="award-title">2025 - CHI'25 Best Paper Honourable Mention</div>
+            <p>For <a href="https://dl.acm.org/doi/full/10.1145/3706598.3713957">RetroSketch: A Retrospective Method for Measuring Emotions and Presence in Virtual Reality</a></p>
+        </div>
+
+        <div class="award-item">
+            <div class="award-title">2024 - CHI'24 Best Paper Honourable Mention</div>
+            <p>For <a href="https://dl.acm.org/doi/full/10.1145/3613904.3642611">Sweating the Details: Emotion Recognition and the Influence of Physical Exertion in Virtual Reality Exergaming</a></p>
+        </div>
+
+        <div class="award-item">
+            <div class="award-title">2020 - EPSRC Doctoral Prize</div>
+        </div>
+
+        <div class="award-item">
+            <div class="award-title">2020 - ETRA'20 Best Paper Honourable Mention</div>
+            <p>For <a href="https://dl.acm.org/doi/abs/10.1145/3379155.3391312">BimodalGaze: Seamlessly Refined Pointing with Gaze and Filtered Gestural Head Movement</a></p>
+        </div>
+
+        <div class="award-item">
+            <div class="award-title">2017 - TOCHI Best Paper Award</div>
+            <p>For <a href="https://dl.acm.org/doi/abs/10.1145/3064937">Motion Correlation: Selecting Objects by Matching Their Movement</a></p>
+        </div>
+
+        <div class="award-item">
+            <div class="award-title">2014 - Best MSc Computer Science Dissertation</div>
+            <p>School of Computing and Communications, Lancaster University</p>
+        </div>
+
+        <div class="award-item">
+            <div class="award-title">2014 - Best Overall Student</div>
+            <p>School of Computing and Communications, Lancaster University</p>
+        </div>
+    </section>
+
+    <!-- Professional Activities Section -->
+    <section id="professional-activities">
+        <h2>Professional Activities</h2>
+
+        <h3>Program Committee Member</h3>
+        <div class="activity-group">
+            <ul class="activity-list">
+                <li><strong>ISWC 2025</strong> - Associate Chair</li>
+                <li><strong>CHI 2025</strong> - Associate Chair (Computational Interaction)</li>
+                <li><strong>UIST 2024</strong> - Associate Chair</li>
+                <li><strong>ISWC 2024</strong> - Associate Chair</li>
+                <li><strong>CHI 2024</strong> - Associate Chair (Understanding People — Statistical and Quantitative Methods)</li>
+                <li><strong>ETRA 2023 Short Papers</strong> - Associate Chair</li>
+                <li><strong>NordiCHI 2022</strong> - Associate Chair</li>
+                <li><strong>MUM 2021</strong> – Awards Committee & Associate Chair for Long/Short Papers and Posters</li>
+                <li><strong>CHI LBW 2021</strong> – Associate Chair</li>
+                <li><strong>INTERACT 2021</strong> – Associate Chair (Full & Short Papers)</li>
+                <li><strong>NordiCHI 2020</strong> – Associate Chair</li>
+                <li><strong>COGAIN 2020</strong> - ACM Symposium on Communication by Gaze Interaction</li>
+                <li><strong>ETRA 2019</strong> - ACM Symposium on Eye Tracking Research & Applications</li>
+                <li><strong>ACM Multimedia 2019</strong> - Demo track</li>
+            </ul>
+        </div>
+
+        <h3>Organising Committee Member and Service</h3>
+        <div class="activity-group">
+            <ul class="activity-list">
+                <li><strong>COGAIN Symposium 2023</strong> - Program committee co-chair</li>
+                <li><strong>Advanced Visual Interfaces (AVI) 2022</strong> - Workshop Co-organiser for Augmented Video</li>
+                <li><strong>Eye Tracking Research and Applications (ETRA) 2022</strong> - Demo and Videos co-chair</li>
+                <li><strong>User Interface Software and Technology (UIST) 2021</strong> - Session Chair</li>
+                <li><strong>User Interface Software and Technology (UIST) 2020-21</strong> - Sustainability co-chair</li>
+            </ul>
+        </div>
+
+        <h3>Reviewer of Research Articles in HCI & UbiComp Conferences/Journals</h3>
+        <div class="activity-group">
+            <ul class="activity-list">
+                <li>ACM SIGCHI Conference on Human Factors in Computing Systems (CHI)</li>
+                <li>ACM Annual Symposium on User Interface Software and Technology (UIST)</li>
+                <li>PACM Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT)</li>
+                <li>ACM Transactions on Computer-Human Interaction (TOCHI)</li>
+                <li>Other ACM Conferences including ISS, DIS, ETRA, TEI, CHI Play, MUM</li>
+                <li>IEEE International Symposium on Mixed and Augmented Reality (ISMAR)</li>
+                <li><strong>9 x Special Recognition for Outstanding Reviews:</strong> CHI'19, CHI'22, ETRA'22, CHI'23 (×2), DIS'23, CHI'24, ISMAR'24 Journals, and ISMAR'25 Journals</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Christopher Clarke. All Rights Reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+                Last updated: February 2025
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+
+    // Submenu active state handling
+    const submenuLinks = document.querySelectorAll('#researchSubmenu .submenu-links a');
+    const sections = document.querySelectorAll('section[id]');
+
+    function updateActiveSubmenuLink() {
+        let current = '';
+        const scrollPosition = window.scrollY + 150;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        submenuLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+
+        // Show/hide year submenu based on whether we're in the publications section
+        const pubSection = document.getElementById('publications');
+        const yearSubmenu = document.getElementById('yearSubmenu');
+        if (pubSection && yearSubmenu) {
+            const pubTop = pubSection.offsetTop;
+            const pubBottom = pubTop + pubSection.clientHeight;
+            if (scrollPosition >= pubTop - 200 && scrollPosition < pubBottom) {
+                yearSubmenu.style.display = 'block';
+            } else {
+                yearSubmenu.style.display = 'none';
+            }
+        }
+    }
+
+    window.addEventListener('scroll', updateActiveSubmenuLink);
+    window.addEventListener('load', updateActiveSubmenuLink);
+
+    // Smooth scroll for submenu links
+    submenuLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                const offset = 140;
+                const targetPosition = targetSection.offsetTop - offset;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Year filter for publications
+    const yearFilters = document.querySelectorAll('.year-filter');
+    yearFilters.forEach(filter => {
+        filter.addEventListener('click', function(e) {
+            e.preventDefault();
+            const year = this.getAttribute('data-year');
+
+            // Update active state
+            yearFilters.forEach(f => f.classList.remove('active'));
+            this.classList.add('active');
+
+            // Get all year headings and publication items in the publications section
+            const pubSection = document.getElementById('publications');
+            const yearHeadings = pubSection.querySelectorAll('.year-heading');
+            const pubItems = pubSection.querySelectorAll('.publication-item');
+
+            if (year === 'all') {
+                yearHeadings.forEach(h => h.style.display = '');
+                pubItems.forEach(p => p.style.display = '');
+            } else {
+                // Hide all first
+                yearHeadings.forEach(h => h.style.display = 'none');
+                pubItems.forEach(p => p.style.display = 'none');
+
+                // Show matching year heading and its publications
+                yearHeadings.forEach(heading => {
+                    if (heading.textContent.trim() === year) {
+                        heading.style.display = '';
+                        // Show all publication items until the next year heading
+                        let next = heading.nextElementSibling;
+                        while (next && !next.classList.contains('year-heading')) {
+                            if (next.classList.contains('publication-item')) {
+                                next.style.display = '';
+                            }
+                            next = next.nextElementSibling;
+                        }
+                    }
+                });
+            }
+
+            // Scroll to publications section
+            const offset = 180;
+            const targetPosition = pubSection.offsetTop - offset;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    </script>
+</body>
 </html>

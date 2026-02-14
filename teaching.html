@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching - Dr. Christopher Clarke</title>
+    <meta name="description" content="Teaching experience by Dr. Christopher Clarke at University of Bath.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for teaching page */
+        .teaching-group {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .teaching-group h4 {
+            color: var(--color-secondary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+        
+        .course-list {
+            list-style: none;
+        }
+        
+        .course-item {
+            padding: var(--spacing-sm) var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+            border-left: 3px solid var(--color-accent);
+            background: rgba(50, 130, 184, 0.04);
+            border-radius: 0 6px 6px 0;
+        }
+        
+        .course-item strong {
+            color: var(--color-secondary);
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 1.05rem;
+        }
+        
+        .course-item em {
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .course-item p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+    
+        
+        /* Teaching Page Submenu */
+        .teaching-submenu {
+            position: sticky;
+            top: 65px;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 999;
+            padding: var(--spacing-sm) 0;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .submenu-container {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .submenu-links {
+            display: flex;
+            gap: var(--spacing-md);
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .submenu-links a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .submenu-links a:hover {
+            color: var(--color-accent);
+            background: rgba(50, 130, 184, 0.05);
+            border-color: var(--color-accent);
+        }
+        
+        .submenu-links a.active {
+            background: var(--color-accent);
+            color: white;
+            border-color: var(--color-accent);
+        }
+        
+        @media (max-width: 768px) {
+            .teaching-submenu {
+                top: 60px;
+            }
+            
+            .submenu-links {
+                gap: 0.5rem;
+            }
+            
+            .submenu-links a {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+
+    </style>
+    <link rel="shortcut icon" href="img/logo.png" type="image/png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Christopher Clarke</a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="supervision.html">Supervision</a></li>
+                <li><a href="teaching.html" class="active">Teaching</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Teaching Content -->
+    <div style="margin-top: 80px;"></div>
+
+    <!-- Teaching Submenu -->
+    <div class="teaching-submenu" id="teachingSubmenu">
+        <div class="submenu-container">
+            <ul class="submenu-links">
+                <li><a href="#qualifications">Qualifications</a></li>
+                <li><a href="#current-teaching">Current Teaching</a></li>
+                <li><a href="#previous-teaching">Previous Teaching</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section id="teaching">
+        <h2>Teaching</h2>
+        
+        <div class="teaching-group">
+            <h3 id="qualifications">Teaching Qualifications</h3>
+            <ul class="course-list">
+                <li class="course-item">
+                    <strong>Fellow of the Higher Education Academy (FHEA)</strong>
+                    <em>2022</em>
+                </li>
+                <li class="course-item">
+                    <strong>Associate Fellow of the Higher Education Academy (AFHEA)</strong>
+                    <em>2019</em>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="teaching-group">
+            <h3 id="current-teaching">Current Teaching</h3>
+            <h4>University of Bath</h4>
+            <ul class="course-list">
+                <li class="course-item">
+                    <strong>CM32023/CM52036: Advanced Human-Computer Interaction</strong>
+                    <em>2025 - Present</em>
+                    <p>Advanced topics in HCI for final-year undergraduate and Master's students.</p>
+                </li>
+                <li class="course-item">
+                    <strong>CM22011: Human-Computer Interaction 1</strong>
+                    <em>2024 - Present</em>
+                    <p>Introduction to HCI principles, interaction design, usability evaluation, and emerging technologies for undergraduate students.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="teaching-group">
+            <h3 id="previous-teaching">Previous Teaching</h3>
+
+            <h4>University of Bath</h4>
+            <ul class="course-list">
+                <li class="course-item">
+                    <strong>CM10228: Principles of Programming II</strong>
+                    <em>2021 - 2023</em>
+                    <p>Double credit unit for First Year Computer Science students covering programming fundamentals using C and Java. Served as Unit Convenor and sole academic teaching this module.</p>
+                </li>
+                <li class="course-item">
+                    <strong>CM500288: Principles of Programming</strong>
+                    <em>2021</em>
+                    <p>Asynchronous online unit for Master's students covering core programming concepts and best practices.</p>
+                </li>
+            </ul>
+
+            <h4>Lancaster University (Postdoctoral Teaching)</h4>
+            <ul class="course-list">
+                <li class="course-item">
+                    <strong>SCC.402: Innovations in Interactive Computing</strong>
+                    <em>2020</em>
+                    <p>Co-taught with Dr. Abe Karnik. Students worked in groups on cutting-edge HCI topics. Several project groups <a href="https://purehost.bath.ac.uk/ws/files/245921351/Step_Into_My_Mind_Palace_ILRN_Author_copy.pdf">published their work</a> at international conferences.</p>
+                </li>
+            </ul>
+            
+            <h4>Guest Lectures</h4>
+            <ul class="course-list">
+                <li class="course-item">
+                    <strong>ENGR.329: Mechatronic Systems</strong>
+                    <em>Lancaster University, 2020</em>
+                    <p>Developed and delivered lecture on Computer Vision for 3rd year Mechatronics undergraduate students.</p>
+                </li>
+                <li class="course-item">
+                    <strong>SCC.022: Making Sense of Data</strong>
+                    <em>Lancaster University, 2020</em>
+                    <p>Created original lecture material, weekly quizzes, and exam questions with short notice due to staff absence. Delivered content online during COVID-19 pandemic.</p>
+                </li>
+                <li class="course-item">
+                    <strong>SCC.202: Human-Computer Interaction</strong>
+                    <em>Lancaster University, 2020</em>
+                    <p>Developed and delivered lecture on Touchless Gestures for 2nd year Computer Science undergraduate students.</p>
+                </li>
+            </ul>
+            
+            <h4>Teaching Assistant Experience</h4>
+            <ul class="course-list">
+                <li class="course-item">
+                    <strong>SCC.205: Social, Ethical and Professional Issues in Computing</strong>
+                    <em>Lancaster University, 2018/19</em>
+                    <p>Supported seminars and assessed student coursework on ethics in computing.</p>
+                </li>
+                <li class="course-item">
+                    <strong>SCC.202: Human-Computer Interaction</strong>
+                    <em>Lancaster University, 2016/17, 2017/18, 2018/19</em>
+                    <p>Led lab sessions, provided one-on-one support for student projects, and assessed coursework over three academic years.</p>
+                </li>
+                <li class="course-item">
+                    <strong>SCC.110: Software Development</strong>
+                    <em>Lancaster University, 2015/16</em>
+                    <p>Assisted with lab sessions teaching fundamental programming concepts and software development practices.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Christopher Clarke. All Rights Reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+                Last updated: February 2025
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    
+    // Submenu active state handling
+    const submenuLinks = document.querySelectorAll('.submenu-links a');
+    const sections = document.querySelectorAll('section[id], h3[id]');
+    
+    function updateActiveSubmenuLink() {
+        let current = '';
+        const scrollPosition = window.scrollY + 150;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        submenuLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', updateActiveSubmenuLink);
+    window.addEventListener('load', updateActiveSubmenuLink);
+    
+    // Smooth scroll for submenu links
+    submenuLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                const offset = 140;
+                const targetPosition = targetSection.offsetTop - offset;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    </script>
+</body>
+</html>
