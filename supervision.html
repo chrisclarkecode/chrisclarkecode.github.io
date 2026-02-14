@@ -565,4 +565,56 @@
                 Last updated: February 2025
             </p>
         </div>
-    </f
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    
+    // Submenu active state handling
+    const submenuLinks = document.querySelectorAll('.submenu-links a');
+    const sections = document.querySelectorAll('section[id]');
+    
+    function updateActiveSubmenuLink() {
+        let current = '';
+        const scrollPosition = window.scrollY + 150;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        submenuLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', updateActiveSubmenuLink);
+    window.addEventListener('load', updateActiveSubmenuLink);
+    
+    // Smooth scroll for submenu links
+    submenuLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                const offset = 140;
+                const targetPosition = targetSection.offsetTop - offset;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    </script>
+</body>
+</html>
