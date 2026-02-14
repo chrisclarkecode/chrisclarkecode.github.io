@@ -335,6 +335,10 @@
             background: rgba(187, 225, 250, 0.03);
             border-radius: 0 6px 6px 0;
             transition: all 0.3s ease;
+        }
+
+        /* Publications with images - flex layout */
+        .publication-item:has(.publication-image) {
             display: flex;
             gap: var(--spacing-md);
             align-items: center;
@@ -496,7 +500,7 @@
                 --spacing-lg: 2rem;
             }
 
-            .publication-item {
+            .publication-item:has(.publication-image) {
                 flex-direction: column;
                 align-items: flex-start;
             }
