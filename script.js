@@ -1,14 +1,21 @@
-
-        // Mobile menu toggle
-        function toggleMenu() {
+        // Mobile menu toggle - make it globally accessible
+        window.toggleMenu = function() {
             const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
+            if (navLinks) {
+                navLinks.classList.toggle('active');
+            }
         }
 
         // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navLinks').classList.remove('active');
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    const navLinksElement = document.getElementById('navLinks');
+                    if (navLinksElement) {
+                        navLinksElement.classList.remove('active');
+                    }
+                });
             });
         });
 
